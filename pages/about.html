@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Naiyo24 - About Us. Learn about our story, mission, and team.">
+    <title>About - Naiyo24</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="/index.html" class="logo">Naiyo24</a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/pages/about.html">About</a>
+            <a href="/pages/services.html">Services</a>
+            <a href="/pages/pricing.html">Pricing</a>
+            <a href="/pages/testimonials.html">Testimonials</a>
+            <a href="/pages/contact.html">Contact</a>
+        </div>
+    </nav>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <h2>About Naiyo24</h2>
+        <p class="subtitle">Your Digital Transformation Partner</p>
+        
+        <div class="about-grid">
+            <!-- Our Story -->
+            <div class="about-section">
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2020, Naiyo24 began with a simple mission: to help businesses thrive in the digital age. What started as a small team of passionate developers has grown into a full-service digital agency, serving clients across various industries.</p>
+                    <p>Our journey has been marked by continuous learning, innovation, and a commitment to delivering exceptional results. We've helped hundreds of businesses transform their digital presence and achieve their goals.</p>
+                </div>
+                <div class="about-image">
+                    <img src="../images/about-story.jpg" alt="Our Story">
+                </div>
+            </div>
+
+            <!-- Our Mission -->
+            <div class="about-section reverse">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>At Naiyo24, we believe that every business deserves access to high-quality digital solutions. Our mission is to empower businesses with the tools and expertise they need to succeed in today's digital landscape.</p>
+                    <p>We're committed to delivering innovative, scalable, and sustainable solutions that drive growth and create lasting value for our clients.</p>
+                </div>
+                <div class="about-image">
+                    <img src="../images/about-mission.jpg" alt="Our Mission">
+                </div>
+            </div>
+
+            <!-- Our Team -->
+            <div class="about-section">
+                <div class="about-text">
+                    <h3>Our Team</h3>
+                    <p>Our team consists of passionate professionals with diverse backgrounds and expertise. From developers and designers to marketers and project managers, we bring together the best talent to deliver comprehensive digital solutions.</p>
+                    <p>We foster a culture of collaboration, innovation, and continuous learning, ensuring that we stay at the forefront of digital technology and best practices.</p>
+                </div>
+                <div class="about-image">
+                    <img src="../images/about-team.jpg" alt="Our Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Work With Us?</h2>
+            <p>Let's discuss how we can help you achieve your digital goals</p>
+            <a href="contact.html" class="cta-button primary">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Naiyo24</h3>
+                <p>Your Digital Transformation Partner</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="../index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@naiyo24.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Naiyo24. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

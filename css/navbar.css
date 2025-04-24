@@ -1,0 +1,152 @@
+/* Modern E-commerce Navbar with Fixed Padding */
+:root {
+    --primary: #4a6bff;
+    --primary-dark: #3a56cc;
+    --text: #2d3748;
+    --text-light: #f8fafc;
+    --hover: #ff6b6b;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --nav-height: 70px;
+}
+
+/* Navbar Container */
+.navbar {
+    background: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--nav-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: var(--transition);
+    box-sizing: border-box;
+}
+
+/* Logo Style */
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+    padding: 5px 0;
+}
+
+.navbar .logo:hover {
+    color: var(--primary-dark);
+}
+
+/* Navigation Links */
+.navbar .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-right: 10px;
+}
+
+.navbar .nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    padding: 8px 0;
+    transition: var(--transition);
+}
+
+.navbar .nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Animated Underline Effect */
+.navbar .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
+}
+
+.navbar .nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Menu (Mobile) */
+.navbar .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.navbar .hamburger span {
+    width: 25px;
+    height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
+    transform-origin: left center;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+    }
+    
+    .navbar .nav-links {
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        gap: 1rem;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: var(--transition);
+        margin-right: 0;
+    }
+    
+    .navbar .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    .navbar .nav-links a {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+    }
+    
+    .navbar .hamburger {
+        display: flex;
+    }
+    
+    /* Hamburger Animation */
+    .navbar .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(2px, -1px);
+    }
+    
+    .navbar .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .navbar .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(2px, 1px);
+    }
+}
+
+/* Content Padding to Prevent Overlap */
+body {
+    padding-top: var(--nav-height);
+}
