@@ -5,118 +5,259 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Naiyo24 - About Us. Learn about our story, mission, and team.">
     <title>About - Naiyo24</title>
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/about.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/about.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <a href="/index.html" class="logo">Naiyo24</a>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="nav-links">
-            <a href="/index.html">Home</a>
-            <a href="/pages/about.html">About</a>
-            <a href="/pages/services.html">Services</a>
-            <a href="/pages/pricing.html">Pricing</a>
-            <a href="/pages/testimonials.html">Testimonials</a>
-            <a href="/pages/contact.html">Contact</a>
+        <div class="container">
+            <a href="../index.html" class="logo">Naiyo<span>24</span></a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="contact.html" class="cta-nav">Contact</a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger');
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-    </script>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>About Us</span>
+            </div>
+            <h1>About <span>Naiyo24</span></h1>
+            <p class="subtitle">Your trusted partner in digital transformation and innovation</p>
+        </div>
+    </section>
 
     <!-- About Content -->
     <section class="about-content">
-        <h2>About Naiyo24</h2>
-        <p class="subtitle">Your Digital Transformation Partner</p>
-        
-        <div class="about-grid">
+        <div class="container">
+            <div class="about-intro">
+                <h2>We're more than just a digital agency</h2>
+                <p>Founded in 2020, Naiyo24 has grown from a small team of passionate developers into a full-service digital transformation partner, helping businesses of all sizes navigate the digital landscape with confidence and success.</p>
+            </div>
+
             <!-- Our Story -->
             <div class="about-section">
                 <div class="about-text">
-                    <h3>Our Story</h3>
-                    <p>Founded in 2020, Naiyo24 began with a simple mission: to help businesses thrive in the digital age. What started as a small team of passionate developers has grown into a full-service digital agency, serving clients across various industries.</p>
-                    <p>Our journey has been marked by continuous learning, innovation, and a commitment to delivering exceptional results. We've helped hundreds of businesses transform their digital presence and achieve their goals.</p>
+                    <span class="section-tag">Our Story</span>
+                    <h3>From humble beginnings to digital excellence</h3>
+                    <p>What started as a small team working out of a shared office space has blossomed into a thriving agency with clients across multiple industries. Our journey has been marked by continuous learning, innovation, and an unwavering commitment to delivering exceptional results.</p>
+                    <p>Over the years, we've helped hundreds of businesses transform their digital presence, streamline operations, and achieve measurable growth through our tailored solutions.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h4>200+</h4>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>50+</h4>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>10+</h4>
+                            <p>Industry Awards</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-image">
-                    <img src="../images/about-story.jpg" alt="Our Story">
+                    <img src="../assets/about-story.jpg" alt="Our Story">
                 </div>
             </div>
 
             <!-- Our Mission -->
             <div class="about-section reverse">
                 <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>At Naiyo24, we believe that every business deserves access to high-quality digital solutions. Our mission is to empower businesses with the tools and expertise they need to succeed in today's digital landscape.</p>
-                    <p>We're committed to delivering innovative, scalable, and sustainable solutions that drive growth and create lasting value for our clients.</p>
+                    <span class="section-tag">Our Mission</span>
+                    <h3>Empowering businesses through technology</h3>
+                    <p>At Naiyo24, we believe that every business deserves access to high-quality digital solutions regardless of size or budget. Our mission is to bridge the gap between technology and business goals.</p>
+                    <ul class="mission-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Deliver innovative, scalable solutions
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Foster long-term client relationships
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Stay at the forefront of digital trends
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            Make technology accessible to all
+                        </li>
+                    </ul>
                 </div>
                 <div class="about-image">
-                    <img src="../images/about-mission.jpg" alt="Our Mission">
+                    <img src="../assets/about-mission.jpg" alt="Our Mission">
                 </div>
             </div>
 
             <!-- Our Team -->
             <div class="about-section">
                 <div class="about-text">
-                    <h3>Our Team</h3>
-                    <p>Our team consists of passionate professionals with diverse backgrounds and expertise. From developers and designers to marketers and project managers, we bring together the best talent to deliver comprehensive digital solutions.</p>
-                    <p>We foster a culture of collaboration, innovation, and continuous learning, ensuring that we stay at the forefront of digital technology and best practices.</p>
+                    <span class="section-tag">Our Team</span>
+                    <h3>Meet the passionate minds behind Naiyo24</h3>
+                    <p>Our strength lies in our diverse team of professionals who bring together a wide range of skills and perspectives. From developers and designers to marketers and project managers, we've assembled top talent to deliver comprehensive digital solutions.</p>
+                    <p>We foster a culture of collaboration, innovation, and continuous learning to ensure we always deliver cutting-edge solutions to our clients.</p>
+                    <a href="team.html" class="cta-button secondary">
+                        <span>Meet the Team</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
                 <div class="about-image">
-                    <img src="../images/about-team.jpg" alt="Our Team">
+                    <img src="../assets/about-team.jpg" alt="Our Team">
+                </div>
+            </div>
+
+            <!-- Values Section -->
+            <div class="values-section">
+                <div class="section-header">
+                    <span class="subtitle">Our Values</span>
+                    <h2>The principles that guide <span>everything we do</span></h2>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovation</h3>
+                        <p>We constantly explore new technologies and approaches to deliver cutting-edge solutions.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Integrity</h3>
+                        <p>Honest communication and ethical practices form the foundation of all our relationships.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Excellence</h3>
+                        <p>We strive for perfection in every project, paying attention to even the smallest details.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Passion</h3>
+                        <p>Our team genuinely loves what we do, and it shows in the quality of our work.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
+    <!-- CTA Section -->
     <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Work With Us?</h2>
-            <p>Let's discuss how we can help you achieve your digital goals</p>
-            <a href="contact.html" class="cta-button primary">Get in Touch</a>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Let's discuss how we can help you achieve your digital goals and take your business to the next level.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="cta-button primary">Get in Touch</a>
+                    <a href="tel:+11234567890" class="cta-button secondary">
+                        <i class="fas fa-phone"></i> Call Us Now
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Naiyo24</h3>
-                <p>Your Digital Transformation Partner</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col about">
+                    <a href="../index.html" class="logo">Naiyo<span>24</span></a>
+                    <p>Your Digital Transformation Partner helping businesses grow with cutting-edge technology solutions since 2020.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col services">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#web">Web Development</a></li>
+                        <li><a href="services.html#mobile">Mobile Apps</a></li>
+                        <li><a href="services.html#ecommerce">E-commerce</a></li>
+                        <li><a href="services.html#ui-ux">UI/UX Design</a></li>
+                        <li><a href="services.html#seo">SEO Services</a></li>
+                        <li><a href="services.html#maintenance">Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Business Street, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +1 (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@naiyo24.com</li>
+                    </ul>
+                    <div class="newsletter">
+                        <h4>Subscribe to Newsletter</h4>
+                        <form>
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="../index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Naiyo24. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookies Policy</a>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>Email: info@naiyo24.com</p>
-                <p>Phone: +1 (123) 456-7890</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Naiyo24. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/11234567890" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../js/navbar.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

@@ -3,257 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Naiyo24 - Services. Explore our comprehensive web development and application development services.">
-    <title>Services - Naiyo24</title>
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="../css/services.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Naiyo24 - Web Development Services. Custom website solutions for your business.">
+    <title>Web Development Services - Naiyo24</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="../js/navbar.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/services.css">
 </head>
 <body>
-
+    <!-- Navigation -->
     <nav class="navbar">
-        <a href="/index.html" class="logo">Naiyo24</a>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="nav-links">
-            <a href="/index.html">Home</a>
-            <a href="/pages/about.html">About</a>
-            <a href="/pages/services.html">Services</a>
-            <a href="/pages/pricing.html">Pricing</a>
-            <a href="/pages/testimonials.html">Testimonials</a>
-            <a href="/pages/contact.html">Contact</a>
+        <div class="container">
+            <a href="../index.html" class="logo">Naiyo<span>24</span></a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="contact.html" class="cta-nav">Contact</a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger');
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-    </script>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Web Development Services</span>
+            </div>
+            <h1>Web <span>Development</span></h1>
+            <p class="subtitle">Custom website solutions tailored to your business needs</p>
+        </div>
+    </section>
 
     <!-- Services Content -->
     <section class="services-content">
-        <h2>Our Services</h2>
-        <p class="subtitle">Comprehensive digital solutions for your business</p>
-        
-        <div class="services-grid">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Transform your online presence with our web solutions</h2>
+                <p>We create high-performance websites that engage visitors and convert them into customers. Choose from our specialized solutions or request a custom website.</p>
+            </div>
+
             <!-- Website Development -->
             <div class="service-category">
-                <h3>Website Development</h3>
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Website Development Solutions</h3>
+                </div>
                 <div class="service-items">
+                    <!-- E-commerce -->
                     <div class="service-item">
-                        <i class="fas fa-shopping-cart"></i>
+                        <div class="service-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
                         <h4>E-commerce Websites</h4>
-                        <p>Custom online stores with secure payment gateways and inventory management.</p>
-                        <button class="service-button" data-service="ecommerce">Get Started</button>
+                        <p>Complete online store solutions with product management, secure checkout, and inventory systems.</p>
+                        <button class="service-button" onclick="openForm('ecommerce')">Get Quote</button>
                     </div>
+                    
+                    <!-- Corporate -->
                     <div class="service-item">
-                        <i class="fas fa-briefcase"></i>
+                        <div class="service-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
                         <h4>Corporate Websites</h4>
-                        <p>Professional websites that showcase your business and build credibility.</p>
-                        <button class="service-button" data-service="corporate">Get Started</button>
+                        <p>Professional business websites that establish credibility and generate leads.</p>
+                        <button class="service-button" onclick="openForm('corporate')">Get Quote</button>
                     </div>
+                    
+                    <!-- News/Magazine -->
                     <div class="service-item">
-                        <i class="fas fa-newspaper"></i>
+                        <div class="service-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
                         <h4>News & Magazine</h4>
-                        <p>Content-rich platforms with advanced publishing and subscription features.</p>
-                        <button class="service-button" data-service="news">Get Started</button>
+                        <p>Content publishing platforms with advanced CMS and subscription features.</p>
+                        <button class="service-button" onclick="openForm('news')">Get Quote</button>
                     </div>
+                    
+                    <!-- Educational -->
                     <div class="service-item">
-                        <i class="fas fa-graduation-cap"></i>
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
                         <h4>Educational Websites</h4>
-                        <p>Learning management systems and educational platforms with interactive features.</p>
-                        <button class="service-button" data-service="educational">Get Started</button>
+                        <p>Learning management systems and online course platforms.</p>
+                        <button class="service-button" onclick="openForm('educational')">Get Quote</button>
                     </div>
+                    
+                    <!-- Custom Website -->
                     <div class="service-item">
-                        <i class="fas fa-hotel"></i>
-                        <h4>Hospitality Websites</h4>
-                        <p>Booking systems and hotel management platforms with real-time availability.</p>
-                        <button class="service-button" data-service="hospitality">Get Started</button>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-utensils"></i>
-                        <h4>Restaurant Websites</h4>
-                        <p>Online ordering systems and reservation platforms with menu management.</p>
-                        <button class="service-button" data-service="restaurant">Get Started</button>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-heartbeat"></i>
-                        <h4>Healthcare Websites</h4>
-                        <p>Patient portals and appointment scheduling systems with HIPAA compliance.</p>
-                        <button class="service-button" data-service="healthcare">Get Started</button>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-home"></i>
-                        <h4>Real Estate Websites</h4>
-                        <p>Property listing platforms with advanced search and virtual tour capabilities.</p>
-                        <button class="service-button" data-service="real-estate">Get Started</button>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-car"></i>
-                        <h4>Automotive Websites</h4>
-                        <p>Vehicle showcase platforms with inventory management and booking systems.</p>
-                        <button class="service-button" data-service="automotive">Get Started</button>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-tshirt"></i>
-                        <h4>Fashion Websites</h4>
-                        <p>E-commerce platforms with size guides, wishlists, and virtual try-on features.</p>
-                        <button class="service-button" data-service="fashion">Get Started</button>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-music"></i>
-                        <h4>Entertainment Websites</h4>
-                        <p>Media streaming platforms with content management and user profiles.</p>
-                        <button class="service-button" data-service="entertainment">Get Started</button>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-dumbbell"></i>
-                        <h4>Fitness Websites</h4>
-                        <p>Class scheduling systems and member management platforms.</p>
-                        <button class="service-button" data-service="fitness">Get Started</button>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-paint-brush"></i>
-                        <h4>Portfolio Websites</h4>
-                        <p>Creative showcase platforms with gallery management and client testimonials.</p>
-                        <button class="service-button" data-service="portfolio">Get Started</button>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-users"></i>
-                        <h4>Community Websites</h4>
-                        <p>Social networking platforms with user profiles and engagement features.</p>
-                        <button class="service-button" data-service="community">Get Started</button>
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Custom Website</h4>
+                        <p>Tailored web solutions designed specifically for your unique requirements.</p>
+                        <button class="service-button" onclick="openForm('custom-web')">Get Quote</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Application Development -->
-            <div class="service-category">
-                <h3>Application Development</h3>
-                <div class="service-items">
-                    <div class="service-item">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h4>Mobile Apps</h4>
-                        <p>Native and cross-platform mobile applications for iOS and Android.</p>
-                        <button class="service-button" data-service="mobile">Get Started</button>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-desktop"></i>
-                        <h4>Desktop Apps</h4>
-                        <p>Custom desktop applications for Windows, macOS, and Linux.</p>
-                        <button class="service-button" data-service="desktop">Get Started</button>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-server"></i>
+            <!-- Other Services (Links to separate pages) -->
+            <div class="other-services">
+                <h3>Explore Our Other Services</h3>
+                <div class="other-services-grid">
+                    <a href="mobile-applications.html" class="other-service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Mobile Applications</h4>
+                        <p>iOS and Android apps for your business</p>
+                        <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    
+                    <a href="web-applications.html" class="other-service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
                         <h4>Web Applications</h4>
-                        <p>Progressive web apps with offline capabilities and push notifications.</p>
-                        <button class="service-button" data-service="web">Get Started</button>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-cogs"></i>
-                        <h4>Custom Software</h4>
-                        <p>Tailored software solutions to streamline your business operations.</p>
-                        <button class="service-button" data-service="custom">Get Started</button>
-                    </div>
+                        <p>Custom web-based software solutions</p>
+                        <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    
+                    <a href="desktop-applications.html" class="other-service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h4>Desktop Applications</h4>
+                        <p>Windows, macOS, and Linux software</p>
+                        <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Transform Your Digital Presence?</h2>
-            <p>Let's discuss how we can help you achieve your digital goals</p>
-            <a href="contact.html" class="cta-button primary">Get in Touch</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Naiyo24</h3>
-                <p>Your Digital Transformation Partner</p>
-                <p>We help businesses transform their digital presence with cutting-edge solutions.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="../index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="about.html">About Us</a>
-                <a href="testimonials.html">Testimonials</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h3>Services</h3>
-                <a href="services.html#web-development">Web Development</a>
-                <a href="services.html#mobile-apps">Mobile Apps</a>
-                <a href="services.html#custom-software">Custom Software</a>
-                <a href="services.html#ui-ux">UI/UX Design</a>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p><i class="fas fa-envelope"></i> info@naiyo24.com</p>
-                <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Business Street, City</p>
-                <div class="newsletter">
-                    <h4>Subscribe to Our Newsletter</h4>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Naiyo24. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Modals -->
+    <!-- Inquiry Modal -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
-            <button class="close-modal">&times;</button>
-            <h3 class="modal-title">Service Requirements</h3>
-            <form class="service-form">
+            <button class="close-modal" onclick="closeForm()">&times;</button>
+            <h3 class="modal-title" id="modalTitle">Web Development Inquiry</h3>
+            <form class="service-form" id="serviceForm">
                 <input type="hidden" name="service_type" id="serviceType">
+                
                 <div class="form-group">
-                    <label for="name">Full Name</label>
+                    <label for="name">Full Name *</label>
                     <input type="text" id="name" name="name" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="email">Email Address</label>
+                    <label for="email">Email Address *</label>
                     <input type="email" id="email" name="email" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="phone">Phone Number</label>
+                    <label for="phone">Phone Number *</label>
                     <input type="tel" id="phone" name="phone" required>
                 </div>
+                
                 <div class="form-group">
                     <label for="company">Company Name</label>
                     <input type="text" id="company" name="company">
                 </div>
+                
                 <div class="form-group">
-                    <label for="budget">Estimated Budget</label>
+                    <label for="budget">Estimated Budget *</label>
                     <select id="budget" name="budget" required>
                         <option value="">Select Budget Range</option>
                         <option value="25000-50000">₹25,000 - ₹50,000</option>
@@ -262,8 +188,9 @@
                         <option value="250000+">₹2,50,000+</option>
                     </select>
                 </div>
+                
                 <div class="form-group">
-                    <label for="timeline">Project Timeline</label>
+                    <label for="timeline">Project Timeline *</label>
                     <select id="timeline" name="timeline" required>
                         <option value="">Select Timeline</option>
                         <option value="1-3 months">1-3 months</option>
@@ -271,54 +198,123 @@
                         <option value="6+ months">6+ months</option>
                     </select>
                 </div>
+                
                 <div class="form-group">
-                    <label for="requirements">Project Requirements</label>
+                    <label for="requirements">Project Requirements *</label>
                     <textarea id="requirements" name="requirements" rows="4" required></textarea>
                 </div>
-                <button type="submit" class="submit-button">Submit Requirements</button>
+                
+                <button type="submit" class="submit-button">
+                    <span class="button-text">Submit Inquiry</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
             </form>
         </div>
     </div>
 
+    <!-- Success Modal -->
+    <div class="modal-overlay hidden" id="successModal">
+        <div class="modal success-modal">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Thank You!</h3>
+            <p>Your inquiry has been submitted successfully. We'll contact you within 24 hours.</p>
+            <button class="close-success-modal" onclick="closeSuccessModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need a Custom Solution?</h2>
+                <p>Contact us to discuss your specific web development requirements</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="cta-button primary">Contact Us</a>
+                    <a href="tel:+11234567890" class="cta-button secondary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col about">
+                    <a href="../index.html" class="logo">Naiyo<span>24</span></a>
+                    <p>Your Digital Transformation Partner helping businesses grow with cutting-edge technology solutions.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col services">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#ecommerce">E-commerce</a></li>
+                        <li><a href="services.html#corporate">Corporate</a></li>
+                        <li><a href="services.html#news">News/Magazine</a></li>
+                        <li><a href="mobile-applications.html">Mobile Apps</a></li>
+                        <li><a href="web-applications.html">Web Apps</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Business Street, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +1 (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@naiyo24.com</li>
+                    </ul>
+                    <div class="newsletter">
+                        <h4>Subscribe to Newsletter</h4>
+                        <form>
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Naiyo24. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookies Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/11234567890" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="../js/navbar.js"></script>
+    <script src="../js/services.js"></script>
     <script src="../js/main.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const modalOverlay = document.getElementById('modalOverlay');
-        const closeModal = document.querySelector('.close-modal');
-        const serviceButtons = document.querySelectorAll('.service-button');
-        const serviceForm = document.querySelector('.service-form');
-        const serviceTypeInput = document.getElementById('serviceType');
-
-        // Open modal when service button is clicked
-        serviceButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const serviceName = this.getAttribute('data-service');
-                serviceTypeInput.value = serviceName;
-                modalOverlay.style.display = 'flex';
-            });
-        });
-
-        // Close modal
-        closeModal.addEventListener('click', function() {
-            modalOverlay.style.display = 'none';
-        });
-
-        // Close modal when clicking outside
-        modalOverlay.addEventListener('click', function(e) {
-            if (e.target === modalOverlay) {
-                modalOverlay.style.display = 'none';
-            }
-        });
-
-        // Handle form submission
-        serviceForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Here you would typically send the form data to your server
-            alert('Thank you for your submission! We will contact you shortly.');
-            modalOverlay.style.display = 'none';
-            serviceForm.reset();
-        });
-    });
-    </script>
 </body>
 </html>
