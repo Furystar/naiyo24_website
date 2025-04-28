@@ -1,4 +1,4 @@
-/* services.css */
+/* services.css - Complete CSS with corrected button alignments */
 :root {
     --primary-color: #2563eb;
     --primary-dark: #1e40af;
@@ -146,6 +146,9 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-item:hover {
@@ -178,10 +181,12 @@
 
 .service-item p {
     color: var(--gray-color);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     line-height: 1.6;
+    flex-grow: 1;
 }
 
+/* Get Quote Button - Corrected Alignment */
 .service-button {
     display: inline-block;
     background-color: var(--primary-color);
@@ -193,7 +198,9 @@
     cursor: pointer;
     transition: var(--transition);
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
 }
 
 .service-button:hover {
@@ -229,7 +236,9 @@
     transition: var(--transition);
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .other-service-card:hover {
@@ -246,16 +255,20 @@
 
 .other-service-card p {
     color: var(--gray-color);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     line-height: 1.6;
+    flex-grow: 1;
 }
 
+/* Learn More Link - Corrected Alignment */
 .learn-more {
     display: inline-flex;
     align-items: center;
     color: var(--primary-color);
     font-weight: 500;
     transition: var(--transition);
+    margin-top: auto;
+    width: fit-content;
 }
 
 .learn-more i {
@@ -332,6 +345,7 @@
     font-weight: 600;
     margin-bottom: 30px;
     color: var(--dark-color);
+    text-align: center;
 }
 
 .hidden {
@@ -485,68 +499,7 @@
     gap: 15px;
 }
 
-/* Responsive Styles */
-@media (max-width: 992px) {
-    .services-hero h1 {
-        font-size: 36px;
-    }
-    
-    .section-intro h2 {
-        font-size: 30px;
-    }
-    
-    .service-category h3 {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 768px) {
-    .services-hero {
-        padding: 150px 0 80px;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .category-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-    
-    .modal {
-        width: 95%;
-        padding: 20px;
-    }
-}
-
-@media (max-width: 576px) {
-    .services-hero h1 {
-        font-size: 30px;
-    }
-    
-    .section-intro h2 {
-        font-size: 26px;
-    }
-    
-    .service-items,
-    .other-services-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .modal-title {
-        font-size: 20px;
-    }
-    
-    .service-form input,
-    .service-form select,
-    .service-form textarea {
-        padding: 10px 12px;
-    }
-}
-
+/* Footer */
 footer {
     background-color: var(--dark-color);
     color: white;
@@ -718,7 +671,7 @@ footer {
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     z-index: 999;
     transition: var(--transition);
     animation: pulse 2s infinite;
@@ -726,7 +679,7 @@ footer {
 
 .whatsapp-float:hover {
     transform: scale(1.1);
-    box-shadow: var(--shadow-xl);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Back to Top Button */
@@ -744,7 +697,7 @@ footer {
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     z-index: 999;
     cursor: pointer;
     opacity: 0;
@@ -763,62 +716,23 @@ footer {
 }
 
 /* Responsive Styles */
-@media (max-width: 1200px) {
-    .hero h1 {
-        font-size: 42px;
-    }
-}
-
 @media (max-width: 992px) {
-    .hero .container,
-    .why-choose-us .container {
-        flex-direction: column;
+    .services-hero h1 {
+        font-size: 36px;
     }
     
-    .hero-content,
-    .why-choose-us .content {
-        order: 2;
-        text-align: center;
+    .section-intro h2 {
+        font-size: 30px;
     }
     
-    .hero-image,
-    .why-choose-us .image {
-        order: 1;
-        margin-bottom: 50px;
-    }
-    
-    .hero p,
-    .section-header p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .hero-cta,
-    .stats {
-        justify-content: center;
-    }
-    
-    .experience-badge {
-        right: 20px;
+    .service-category h3 {
+        font-size: 24px;
     }
 }
 
 @media (max-width: 768px) {
-    .hero {
+    .services-hero {
         padding: 150px 0 80px;
-    }
-    
-    .hero h1 {
-        font-size: 36px;
-    }
-    
-    .section-header h2 {
-        font-size: 30px;
-    }
-    
-    .hero-cta {
-        flex-direction: column;
-        gap: 15px;
     }
     
     .cta-buttons {
@@ -826,39 +740,47 @@ footer {
         gap: 15px;
     }
     
-    .stats {
-        flex-wrap: wrap;
+    .category-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .modal {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .service-button,
+    .learn-more {
+        width: 100%;
+        text-align: center;
         justify-content: center;
-    }
-    
-    .stat-item:not(:last-child)::after {
-        display: none;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
     }
 }
 
 @media (max-width: 576px) {
-    .hero h1 {
+    .services-hero h1 {
         font-size: 30px;
     }
     
-    .hero p {
-        font-size: 16px;
-    }
-    
-    .section-header h2 {
+    .section-intro h2 {
         font-size: 26px;
     }
     
-    .testimonials-grid {
+    .service-items,
+    .other-services-grid {
         grid-template-columns: 1fr;
     }
     
-    .footer-content {
-        grid-template-columns: 1fr;
+    .modal-title {
+        font-size: 20px;
+    }
+    
+    .service-form input,
+    .service-form select,
+    .service-form textarea {
+        padding: 10px 12px;
     }
     
     .whatsapp-float {
@@ -878,6 +800,7 @@ footer {
     }
 }
 
+/* CTA Button Styles */
 .cta-button {
     display: inline-flex;
     align-items: center;
@@ -898,13 +821,13 @@ footer {
 .cta-button.primary {
     background-color: var(--primary-color);
     color: white;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button.primary:hover {
     background-color: var(--primary-dark);
     transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button.secondary {
@@ -917,5 +840,18 @@ footer {
     background-color: var(--primary-color);
     color: white;
     transform: translateY(-3px);
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframe Animation for WhatsApp Button */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
 }

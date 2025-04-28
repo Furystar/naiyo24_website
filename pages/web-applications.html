@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Application Development Services | Naiyo24</title>
+    <meta name="description" content="Professional web application development with modern frameworks and technologies">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/web-applications.css">
+</head>
+<body>
+    <!-- Back to Services Button -->
+    <a href="services.html" class="back-to-services">
+        <i class="fas fa-arrow-left"></i> All Services
+    </a>
+
+    <!-- Hero Section -->
+    <section class="web-hero">
+        <div class="container">
+            <h1>Web <span>Application</span> Development</h1>
+            <p class="subtitle">Build powerful, scalable web applications for your business</p>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Web Application Development">
+            </div>
+        </div>
+    </section>
+
+    <!-- Web App Types Section -->
+    <section class="web-types">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Web <span>Application</span> Services</h2>
+                <p>We develop custom web applications tailored to your business needs</p>
+            </div>
+
+            <div class="web-grid">
+                <!-- SPA -->
+                <div class="web-card spa">
+                    <div class="web-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Single Page Applications</h3>
+                    <p>Fast, responsive SPAs built with React, Angular, or Vue.js</p>
+                    <div class="web-features">
+                        <span><i class="fas fa-check"></i> Client-side rendering</span>
+                        <span><i class="fas fa-check"></i> API integration</span>
+                        <span><i class="fas fa-check"></i> State management</span>
+                    </div>
+                    <button class="web-cta" onclick="openForm('spa')">Get SPA Quote</button>
+                </div>
+
+                <!-- CMS -->
+                <div class="web-card cms">
+                    <div class="web-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Content Management Systems</h3>
+                    <p>Custom CMS solutions with WordPress, Strapi, or headless CMS</p>
+                    <div class="web-features">
+                        <span><i class="fas fa-check"></i> Custom themes</span>
+                        <span><i class="fas fa-check"></i> Plugin development</span>
+                        <span><i class="fas fa-check"></i> User roles</span>
+                    </div>
+                    <button class="web-cta" onclick="openForm('cms')">Get CMS Quote</button>
+                </div>
+
+                <!-- E-commerce -->
+                <div class="web-card ecommerce">
+                    <div class="web-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-commerce Platforms</h3>
+                    <p>Online stores with Shopify, WooCommerce, or custom solutions</p>
+                    <div class="web-features">
+                        <span><i class="fas fa-check"></i> Payment gateways</span>
+                        <span><i class="fas fa-check"></i> Inventory management</span>
+                        <span><i class="fas fa-check"></i> Checkout customization</span>
+                    </div>
+                    <button class="web-cta" onclick="openForm('ecommerce')">Get E-commerce Quote</button>
+                </div>
+
+                <!-- SaaS -->
+                <div class="web-card saas">
+                    <div class="web-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>SaaS Applications</h3>
+                    <p>Scalable software-as-a-service solutions with subscription models</p>
+                    <div class="web-features">
+                        <span><i class="fas fa-check"></i> Multi-tenancy</span>
+                        <span><i class="fas fa-check"></i> Subscription billing</span>
+                        <span><i class="fas fa-check"></i> Analytics dashboard</span>
+                    </div>
+                    <button class="web-cta" onclick="openForm('saas')">Get SaaS Quote</button>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="web-card enterprise">
+                    <div class="web-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Enterprise Web Apps</h3>
+                    <p>Custom business applications with complex workflows</p>
+                    <div class="web-features">
+                        <span><i class="fas fa-check"></i> Role-based access</span>
+                        <span><i class="fas fa-check"></i> Data visualization</span>
+                        <span><i class="fas fa-check"></i> ERP integration</span>
+                    </div>
+                    <button class="web-cta" onclick="openForm('enterprise')">Get Enterprise Quote</button>
+                </div>
+
+                <!-- API Services -->
+                <div class="web-card api">
+                    <div class="web-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>API Services</h3>
+                    <p>RESTful and GraphQL APIs with Node.js, Django, or Laravel</p>
+                    <div class="web-features">
+                        <span><i class="fas fa-check"></i> Documentation</span>
+                        <span><i class="fas fa-check"></i> Authentication</span>
+                        <span><i class="fas fa-check"></i> Rate limiting</span>
+                    </div>
+                    <button class="web-cta" onclick="openForm('api')">Get API Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Technology</span> Stack</h2>
+                <p>We use modern technologies to build high-performance web applications</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" alt="React">
+                    <h4>React</h4>
+                </div>
+                <div class="tech-card">
+                    <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular">
+                    <h4>Angular</h4>
+                </div>
+                <div class="tech-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png" alt="Vue">
+                    <h4>Vue.js</h4>
+                </div>
+                <div class="tech-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1280px-Node.js_logo.svg.png" alt="Node.js">
+                    <h4>Node.js</h4>
+                </div>
+                <div class="tech-card">
+                    <img src="https://www.django-rest-framework.org/img/logo.png" alt="Django REST">
+                    <h4>Django REST</h4>
+                </div>
+                <div class="tech-card">
+                    <img src="https://laravel.com/img/logomark.min.svg" alt="Laravel">
+                    <h4>Laravel</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process -->
+    <section class="dev-process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Development</span> Process</h2>
+                <p>A structured approach to deliver high-quality web applications</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-card">
+                    <div class="step-number">1</div>
+                    <h3>Requirement Analysis</h3>
+                    <p>Detailed discussions to understand your business needs</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="step-number">2</div>
+                    <h3>UI/UX Design</h3>
+                    <p>Creating wireframes and prototypes for user experience</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="step-number">3</div>
+                    <h3>Frontend Development</h3>
+                    <p>Building responsive interfaces with modern frameworks</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="step-number">4</div>
+                    <h3>Backend Development</h3>
+                    <p>Developing server-side logic and database architecture</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="step-number">5</div>
+                    <h3>Testing & QA</h3>
+                    <p>Rigorous testing across devices and browsers</p>
+                </div>
+                
+                <div class="process-card">
+                    <div class="step-number">6</div>
+                    <h3>Deployment & Maintenance</h3>
+                    <p>Launching and ongoing support for your application</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="web-cta-section">
+        <div class="container">
+            <h2>Ready to Build Your Web Application?</h2>
+            <p>Get a free consultation with our web development experts</p>
+            <button class="cta-button" onclick="openForm('consultation')">Start Your Project</button>
+        </div>
+    </section>
+
+    <!-- Inquiry Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="close-modal" onclick="closeForm()">&times;</button>
+            <h3 class="modal-title" id="modalTitle">Web Application Inquiry</h3>
+            <form class="web-form" id="webForm">
+                <input type="hidden" name="web_type" id="webType">
+                
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                
+                <div class="form-group">
+                    <label for="platforms">Application Type *</label>
+                    <select id="platforms" name="platforms" required>
+                        <option value="">Select Application Type</option>
+                        <option value="spa">Single Page Application</option>
+                        <option value="cms">Content Management System</option>
+                        <option value="ecommerce">E-commerce Platform</option>
+                        <option value="saas">SaaS Application</option>
+                        <option value="enterprise">Enterprise Application</option>
+                        <option value="api">API Services</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="budget">Estimated Budget *</label>
+                    <select id="budget" name="budget" required>
+                        <option value="">Select Budget Range</option>
+                        <option value="5-10">₹5,000 - ₹10,000</option>
+                        <option value="10-25">₹10,000 - ₹25,000</option>
+                        <option value="25-50">₹25,000 - ₹50,000</option>
+                        <option value="50+">₹50,000+</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="timeline">Project Timeline *</label>
+                    <select id="timeline" name="timeline" required>
+                        <option value="">Select Timeline</option>
+                        <option value="1-3">1-3 months</option>
+                        <option value="3-6">3-6 months</option>
+                        <option value="6+">6+ months</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="requirements">Project Requirements *</label>
+                    <textarea id="requirements" name="requirements" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">
+                    <span class="button-text">Submit Inquiry</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay hidden" id="successModal">
+        <div class="modal success-modal">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Thank You!</h3>
+            <p>Your web application inquiry has been submitted successfully. Our team will contact you within 24 hours.</p>
+            <button class="close-success-modal" onclick="closeSuccessModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="/js/web-applications.js"></script>
+</body>
+</html>

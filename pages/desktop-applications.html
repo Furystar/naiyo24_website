@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Application Development | Naiyo24</title>
+    <meta name="description" content="Professional desktop application development for Windows, macOS, and Linux">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/desktop-applications.css">
+</head>
+<body>
+    <!-- Back to Services Button -->
+    <a href="services.html" class="back-to-services">
+        <i class="fas fa-arrow-left"></i> All Services
+    </a>
+
+    <!-- Hero Section -->
+    <section class="desktop-hero">
+        <div class="container">
+            <h1>Desktop <span>Application</span> Development</h1>
+            <p class="subtitle">Powerful native applications for Windows, macOS, and Linux</p>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Desktop Application Development">
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Section -->
+    <section class="platform-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cross-Platform <span>Desktop</span> Development</h2>
+                <p>We build native applications for all major operating systems</p>
+            </div>
+
+            <div class="platform-grid">
+                <div class="platform-card windows">
+                    <div class="platform-icon">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <h3>Windows Applications</h3>
+                    <p>Native Win32, WPF, and UWP applications with .NET and C++</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check"></i> Windows 10/11 compatible</li>
+                        <li><i class="fas fa-check"></i> MSI installer packages</li>
+                        <li><i class="fas fa-check"></i> System tray integration</li>
+                    </ul>
+                    <button class="platform-cta" onclick="openForm('windows')">Get Windows App Quote</button>
+                </div>
+
+                <div class="platform-card macos">
+                    <div class="platform-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3>macOS Applications</h3>
+                    <p>Native Cocoa applications with Swift or Objective-C</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check"></i> Mac App Store ready</li>
+                        <li><i class="fas fa-check"></i> Dark mode support</li>
+                        <li><i class="fas fa-check"></i> Touch Bar integration</li>
+                    </ul>
+                    <button class="platform-cta" onclick="openForm('macos')">Get macOS App Quote</button>
+                </div>
+
+                <div class="platform-card linux">
+                    <div class="platform-icon">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <h3>Linux Applications</h3>
+                    <p>GTK/Qt applications with C++ or Python</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check"></i> DEB/RPM packages</li>
+                        <li><i class="fas fa-check"></i> Snap/Flatpak support</li>
+                        <li><i class="fas fa-check"></i> Systemd integration</li>
+                    </ul>
+                    <button class="platform-cta" onclick="openForm('linux')">Get Linux App Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Types Section -->
+    <section class="app-types">
+        <div class="container">
+            <div class="section-header">
+                <h2>Desktop <span>Application</span> Types</h2>
+                <p>We develop all kinds of desktop software solutions</p>
+            </div>
+
+            <div class="app-grid">
+                <!-- Business Software -->
+                <div class="app-card business">
+                    <div class="app-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Business Software</h3>
+                    <p>Custom ERP, CRM, and productivity tools for enterprises</p>
+                    <div class="app-features">
+                        <span><i class="fas fa-check"></i> Database integration</span>
+                        <span><i class="fas fa-check"></i> Reporting tools</span>
+                        <span><i class="fas fa-check"></i> Multi-user support</span>
+                    </div>
+                    <button class="app-cta" onclick="openForm('business')">Get Business App Quote</button>
+                </div>
+
+                <!-- Multimedia -->
+                <div class="app-card multimedia">
+                    <div class="app-icon">
+                        <i class="fas fa-photo-film"></i>
+                    </div>
+                    <h3>Multimedia Apps</h3>
+                    <p>Video/audio editors, image processors, and media players</p>
+                    <div class="app-features">
+                        <span><i class="fas fa-check"></i> GPU acceleration</span>
+                        <span><i class="fas fa-check"></i> Codec support</span>
+                        <span><i class="fas fa-check"></i> Plugin architecture</span>
+                    </div>
+                    <button class="app-cta" onclick="openForm('multimedia')">Get Multimedia Quote</button>
+                </div>
+
+                <!-- Utility Tools -->
+                <div class="app-card utility">
+                    <div class="app-icon">
+                        <i class="fas fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3>Utility Tools</h3>
+                    <p>System utilities, file managers, and productivity boosters</p>
+                    <div class="app-features">
+                        <span><i class="fas fa-check"></i> Low-level access</span>
+                        <span><i class="fas fa-check"></i> Automation</span>
+                        <span><i class="fas fa-check"></i> Background services</span>
+                    </div>
+                    <button class="app-cta" onclick="openForm('utility')">Get Utility Quote</button>
+                </div>
+
+                <!-- Games -->
+                <div class="app-card games">
+                    <div class="app-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Desktop Games</h3>
+                    <p>2D/3D games with Unity, Unreal, or custom engines</p>
+                    <div class="app-features">
+                        <span><i class="fas fa-check"></i> Physics engines</span>
+                        <span><i class="fas fa-check"></i> Multiplayer support</span>
+                        <span><i class="fas fa-check"></i> Steam integration</span>
+                    </div>
+                    <button class="app-cta" onclick="openForm('games')">Get Game Dev Quote</button>
+                </div>
+
+                <!-- Scientific -->
+                <div class="app-card scientific">
+                    <div class="app-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Scientific Apps</h3>
+                    <p>Data analysis, visualization, and simulation software</p>
+                    <div class="app-features">
+                        <span><i class="fas fa-check"></i> Numerical computing</span>
+                        <span><i class="fas fa-check"></i> Charting libraries</span>
+                        <span><i class="fas fa-check"></i> GPU computing</span>
+                    </div>
+                    <button class="app-cta" onclick="openForm('scientific')">Get Science App Quote</button>
+                </div>
+
+                <!-- Custom Solutions -->
+                <div class="app-card custom">
+                    <div class="app-icon">
+                        <i class="fas fa-gears"></i>
+                    </div>
+                    <h3>Custom Solutions</h3>
+                    <p>Tailored desktop applications for unique requirements</p>
+                    <div class="app-features">
+                        <span><i class="fas fa-check"></i> Hardware integration</span>
+                        <span><i class="fas fa-check"></i> Legacy system support</span>
+                        <span><i class="fas fa-check"></i> Custom protocols</span>
+                    </div>
+                    <button class="app-cta" onclick="openForm('custom')">Get Custom App Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Desktop <span>Development</span> Stack</h2>
+                <p>Modern technologies we use to build powerful desktop applications</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/1200px-.NET_Core_Logo.svg.png" alt=".NET">
+                    <h4>.NET Framework</h4>
+                </div>
+                <div class="tech-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png" alt="C++">
+                    <h4>C++</h4>
+                </div>
+                <div class="tech-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/2560px-Swift_logo.svg.png" alt="Swift">
+                    <h4>Swift</h4>
+                </div>
+                <div class="tech-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1200px-Python.svg.png" alt="Python">
+                    <h4>Python</h4>
+                </div>
+                <div class="tech-card">
+                    <img src="https://www.electronjs.org/images/electron-logo.svg" alt="Electron">
+                    <h4>Electron</h4>
+                </div>
+                <div class="tech-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Qt_logo_2016.svg/1280px-Qt_logo_2016.svg.png" alt="Qt">
+                    <h4>Qt Framework</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="desktop-cta-section">
+        <div class="container">
+            <h2>Ready to Build Your Desktop Application?</h2>
+            <p>Get a free consultation with our desktop development experts</p>
+            <button class="cta-button" onclick="openForm('consultation')">Start Your Project</button>
+        </div>
+    </section>
+
+    <!-- Inquiry Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="close-modal" onclick="closeForm()">&times;</button>
+            <h3 class="modal-title" id="modalTitle">Desktop Application Inquiry</h3>
+            <form class="desktop-form" id="desktopForm">
+                <input type="hidden" name="app_type" id="appType">
+                
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                
+                <div class="form-group">
+                    <label for="platforms">Target Platforms *</label>
+                    <select id="platforms" name="platforms" required>
+                        <option value="">Select Platforms</option>
+                        <option value="windows">Windows</option>
+                        <option value="macos">macOS</option>
+                        <option value="linux">Linux</option>
+                        <option value="cross-platform">Cross-Platform</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="app_type">Application Type *</label>
+                    <select id="app_type" name="app_type" required>
+                        <option value="">Select Application Type</option>
+                        <option value="business">Business Software</option>
+                        <option value="multimedia">Multimedia Application</option>
+                        <option value="utility">Utility Tool</option>
+                        <option value="game">Game</option>
+                        <option value="scientific">Scientific Application</option>
+                        <option value="custom">Custom Solution</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="budget">Estimated Budget *</label>
+                    <select id="budget" name="budget" required>
+                        <option value="">Select Budget Range</option>
+                        <option value="10-25">₹10,000 - ₹25,000</option>
+                        <option value="25-50">₹25,000 - ₹50,000</option>
+                        <option value="50-100">₹50,000 - ₹100,000</option>
+                        <option value="100+">₹100,000+</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="requirements">Project Requirements *</label>
+                    <textarea id="requirements" name="requirements" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">
+                    <span class="button-text">Submit Inquiry</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay hidden" id="successModal">
+        <div class="modal success-modal">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Thank You!</h3>
+            <p>Your desktop application inquiry has been submitted successfully. Our team will contact you within 24 hours.</p>
+            <button class="close-success-modal" onclick="closeSuccessModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="/js/desktop-applications.js"></script>
+</body>
+</html>
