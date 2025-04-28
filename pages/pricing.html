@@ -7,36 +7,28 @@
     <title>Pricing - Naiyo24</title>
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/pricing.css">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Navigation -->
     <nav class="navbar">
-        <a href="/index.html" class="logo">Naiyo24</a>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="nav-links">
-            <a href="/index.html">Home</a>
-            <a href="/pages/about.html">About</a>
-            <a href="/pages/services.html">Services</a>
-            <a href="/pages/pricing.html">Pricing</a>
-            <a href="/pages/testimonials.html">Testimonials</a>
-            <a href="/pages/contact.html">Contact</a>
+        <div class="container">
+            <a href="../index.html" class="logo">Naiyo<span>24</span></a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="contact.html" class="cta-nav">Contact</a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger');
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-    </script>
-
     <!-- Updated Pricing Content -->
     <section class="pricing-content">
         <h2>Choose Your Plan</h2>
@@ -51,17 +43,22 @@
                         <span class="amount">₹14,999</span>
                         <span class="period">/project</span>
                     </div>
-                    <p>Perfect for small businesses</p>
+                    <p>Perfect for small businesses and startups</p>
                 </div>
                 <div class="pricing-features">
                     <ul>
-                        <li><i class="fas fa-check"></i> Basic Website Design</li>
-                        <li><i class="fas fa-check"></i> 5 Pages</li>
-                        <li><i class="fas fa-check"></i> Mobile Responsive</li>
-                        <li><i class="fas fa-check"></i> Contact Form</li>
-                        <li><i class="fas fa-check"></i> Basic SEO</li>
-                        <li><i class="fas fa-check"></i> Email Support</li>
+                        <li><i class="fas fa-check"></i> Custom Website Design (Up to 8 Pages)</li>
+                        <li><i class="fas fa-check"></i> Mobile-Responsive Design</li>
+                        <li><i class="fas fa-check"></i> Secure Domain & Hosting (1 Year)</li>
+                        <li><i class="fas fa-check"></i> SSL Certificate</li>
+                        <li><i class="fas fa-check"></i> Basic Contact Form</li>
+                        <li><i class="fas fa-check"></i> Basic SEO Setup (First Month FREE)</li>
+                        <li><i class="fas fa-check"></i> 24/7 Customer Support</li>
                     </ul>
+                    <div class="addon">
+                        <p><strong>Add-on:</strong> Advanced SEO (+₹15,000)</p>
+                        <p><strong>Add-on:</strong> Maintenance & Hosting: ₹2,000/month</p>
+                    </div>
                 </div>
                 <div class="pricing-footer">
                     <a href="contact.html" class="cta-button secondary">Get Started</a>
@@ -71,25 +68,31 @@
             <!-- Pro Plan -->
             <div class="pricing-card featured">
                 <div class="pricing-header">
-                    <div class="popular-badge">Most Popular</div>
                     <h3>Professional</h3>
                     <div class="price">
-                        <span class="amount">₹25,999</span>
+                        <span class="amount">₹35,999</span>
                         <span class="period">/project</span>
                     </div>
                     <p>Ideal for growing businesses</p>
                 </div>
                 <div class="pricing-features">
                     <ul>
-                        <li><i class="fas fa-check"></i> Custom Website Design</li>
-                        <li><i class="fas fa-check"></i> 10 Pages</li>
-                        <li><i class="fas fa-check"></i> Mobile Responsive</li>
-                        <li><i class="fas fa-check"></i> Advanced Contact Forms</li>
-                        <li><i class="fas fa-check"></i> Advanced SEO</li>
+                        <li><i class="fas fa-check"></i> Custom Website Design (Up to 17 Pages)</li>
+                        <li><i class="fas fa-check"></i> Mobile-First, SEO-Optimized Layout</li>
+                        <li><i class="fas fa-check"></i> Domain & Hosting (1 Year)</li>
+                        <li><i class="fas fa-check"></i> SSL Security + Speed Optimization</li>
+                        <li><i class="fas fa-check"></i> Advanced Contact Forms (with CRM Integration)</li>
+                        <li><i class="fas fa-check"></i> Blog Setup</li>
                         <li><i class="fas fa-check"></i> Social Media Integration</li>
-                        <li><i class="fas fa-check"></i> Priority Support</li>
-                        <li><i class="fas fa-check"></i> Monthly Maintenance</li>
+                        <li><i class="fas fa-check"></i> Photo Gallery / Portfolio Display</li>
+                        <li><i class="fas fa-check"></i> Admin Panel (CMS Lite)</li>
+                        <li><i class="fas fa-check"></i> Monthly Backup System</li>
+                        <li><i class="fas fa-check"></i> 24/7 Priority Support</li> 
+                        <li><i class="fas fa-check"></i> Google Analytics Setup</li>
                     </ul>
+                    <div class="addon">
+                        <p><strong>Add-on:</strong> Maintenance & Hosting: ₹2,000/month</p>
+                    </div>
                 </div>
                 <div class="pricing-footer">
                     <a href="contact.html" class="cta-button primary">Get Started</a>
@@ -101,95 +104,130 @@
                 <div class="pricing-header">
                     <h3>Enterprise</h3>
                     <div class="price">
-                        <span class="amount">₹50,999</span>
+                        <span class="amount">₹50,999+</span>
                         <span class="period">/project</span>
                     </div>
-                    <p>For large scale businesses</p>
+                    <p>For large scale businesses and corporations</p>
                 </div>
                 <div class="pricing-features">
                     <ul>
-                        <li><i class="fas fa-check"></i> Premium Custom Design</li>
-                        <li><i class="fas fa-check"></i> Unlimited Pages</li>
-                        <li><i class="fas fa-check"></i> Mobile Responsive</li>
+                        <li><i class="fas fa-check"></i> Fully Custom Website Development (Unlimited Pages)</li>
+                        <li><i class="fas fa-check"></i> Tailored Designs for Business-Specific Needs</li>
                         <li><i class="fas fa-check"></i> E-commerce Integration</li>
-                        <li><i class="fas fa-check"></i> Advanced SEO & Marketing</li>
-                        <li><i class="fas fa-check"></i> Custom Features</li>
-                        <li><i class="fas fa-check"></i> 24/7 Support</li>
-                        <li><i class="fas fa-check"></i> Weekly Maintenance</li>
-                        <li><i class="fas fa-check"></i> Analytics Dashboard</li>
+                        <li><i class="fas fa-check"></i> Advanced Web Applications (CRM Systems, Booking Systems, etc.)</li>
+                        <li><i class="fas fa-check"></i> Membership Systems & User Accounts (Optional)</li>
+                        <li><i class="fas fa-check"></i> Multi-Language Support (Optional)</li>
+                        <li><i class="fas fa-check"></i> Advanced Speed Optimization</li>
+                        <li><i class="fas fa-check"></i> Custom Admin Panel</li>
+                        <li><i class="fas fa-check"></i> Daily Backup & Security Firewall</li>
+                        <li><i class="fas fa-check"></i> DDOS Protection</li>
+                        <li><i class="fas fa-check"></i> Google Analytics & Paid Ads Pixel Setup</li>
+                        <li><i class="fas fa-check"></i> Full SEO Strategy (First Month FREE)</li>
+                        <li><i class="fas fa-check"></i> 24/7 Dedicated Manager Support</li>
                     </ul>
+                    <div class="addon">
+                        <p><strong>Custom Quote:</strong> ₹50,999 - ₹1,20,000</p>
+                        <p>Maintenance & Premium Hosting: ₹2,000/week</p>
+                    </div>
                 </div>
                 <div class="pricing-footer">
-                    <a href="contact.html" class="cta-button secondary">Get Started</a>
+                    <a href="contact.html" class="cta-button secondary">Get Custom Quote</a>
                 </div>
             </div>
         </div>
 
-        <div class="custom-solution">
-            <h3>Need a Custom Solution?</h3>
-            <p>We can create a tailored package to meet your specific requirements</p>
-            <a href="contact.html" class="cta-button secondary">Contact Us</a>
-        </div>
     </section>
 
     <!-- Call to Action -->
+    <!-- CTA Section -->
     <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Get Started?</h2>
-            <p>Let's discuss how we can help you achieve your digital goals</p>
-            <a href="contact.html" class="cta-button primary">Get in Touch</a>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need a Custom Solution?</h2>
+                <p>Contact us to discuss your specific web development requirements</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="cta-button primary">Contact Us</a>
+                    <a href="tel:+11234567890" class="cta-button secondary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Naiyo24</h3>
-                <p>Your Digital Transformation Partner</p>
-                <p>We help businesses transform their digital presence with cutting-edge solutions.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col about">
+                    <a href="../index.html" class="logo">Naiyo<span>24</span></a>
+                    <p>Your Digital Transformation Partner helping businesses grow with cutting-edge technology solutions.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col services">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#ecommerce">E-commerce</a></li>
+                        <li><a href="services.html#corporate">Corporate</a></li>
+                        <li><a href="services.html#news">News/Magazine</a></li>
+                        <li><a href="mobile-applications.html">Mobile Apps</a></li>
+                        <li><a href="web-applications.html">Web Apps</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Business Street, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +1 (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@naiyo24.com</li>
+                    </ul>
+                    <div class="newsletter">
+                        <h4>Subscribe to Newsletter</h4>
+                        <form>
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="../index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="about.html">About Us</a>
-                <a href="testimonials.html">Testimonials</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h3>Services</h3>
-                <a href="services.html#web-development">Web Development</a>
-                <a href="services.html#mobile-apps">Mobile Apps</a>
-                <a href="services.html#custom-software">Custom Software</a>
-                <a href="services.html#ui-ux">UI/UX Design</a>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p><i class="fas fa-envelope"></i> info@naiyo24.com</p>
-                <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Business Street, City</p>
-                <div class="newsletter">
-                    <h4>Subscribe to Our Newsletter</h4>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Naiyo24. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookies Policy</a>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Naiyo24. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/11234567890" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="../js/main.js"></script>
+    <script src="../js/navbar.js"></script>
+
 </body>
 </html>

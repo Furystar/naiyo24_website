@@ -1,13 +1,5 @@
 // services.js
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    function toggleMenu() {
-        const navLinks = document.querySelector('.nav-links');
-        const hamburger = document.querySelector('.hamburger');
-        navLinks.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    }
-
     // Modal elements
     const modalOverlay = document.getElementById('modalOverlay');
     const successModal = document.getElementById('successModal');
@@ -30,19 +22,19 @@ document.addEventListener('DOMContentLoaded', function() {
     window.openForm = function(serviceType) {
         serviceTypeInput.value = serviceType;
         modalTitle.textContent = serviceTitles[serviceType] + ' Inquiry';
-        modalOverlay.style.display = 'flex';
+        modalOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
     };
 
     // Close form modal
     window.closeForm = function() {
-        modalOverlay.style.display = 'none';
+        modalOverlay.classList.remove('active');
         document.body.style.overflow = 'auto';
     };
 
     // Close success modal
     window.closeSuccessModal = function() {
-        successModal.style.display = 'none';
+        successModal.classList.add('hidden');
         document.body.style.overflow = 'auto';
     };
 
@@ -75,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Simulate form submission
         setTimeout(() => {
             closeForm();
-            successModal.style.display = 'flex';
+            successModal.classList.remove('hidden');
             serviceForm.reset();
             
             // Reset button state
@@ -87,15 +79,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close modals with escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
-            if (modalOverlay.style.display === 'flex') {
+            if (modalOverlay.classList.contains('active')) {
                 closeForm();
             }
-            if (successModal.style.display === 'flex') {
+            if (!successModal.classList.contains('hidden')) {
                 closeSuccessModal();
             }
         }
     });
-
-    // Make toggleMenu available globally
-    window.toggleMenu = toggleMenu;
 });

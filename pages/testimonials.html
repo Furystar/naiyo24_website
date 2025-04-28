@@ -5,252 +5,404 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Naiyo24 - Testimonials. Read what our clients say about our services.">
     <title>Testimonials - Naiyo24</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/testimonials.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Navigation -->
     <nav class="navbar">
-        <a href="index.html" class="logo">Naiyo24</a>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="nav-links">
-            <a href="/index.html">Home</a>
-            <a href="/pages/about.html">About</a>
-            <a href="/pages/services.html">Services</a>
-            <a href="/pages/pricing.html">Pricing</a>
-            <a href="/pages/testimonials.html">Testimonials</a>
-            <a href="/pages/contact.html">Contact</a>
+        <div class="container">
+            <a href="../index.html" class="logo">Naiyo<span>24</span></a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="testimonials.html" class="active">Testimonials</a>
+                <a href="contact.html" class="cta-nav">Contact</a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger');
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-    </script>
+
+    <!-- Testimonials Hero -->
+    <section class="testimonials-hero">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Testimonials</span>
+            </div>
+            <h1>Client <span>Testimonials</span></h1>
+            <p class="subtitle">Hear from businesses we've helped transform with our digital solutions</p>
+        </div>
+    </section>
 
     <!-- Testimonials Content -->
     <section class="testimonials-content">
-        <h2>What Our Clients Say</h2>
-        <p class="subtitle">Hear from businesses we've helped transform</p>
-        
-        <div class="testimonials-grid">
-            <!-- Testimonial 1 -->
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="client-image">
-                        <img src="../images/client1.jpg" alt="Client 1">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Client Voices</span>
+                <h2>What Our <span>Clients Say</span></h2>
+                <p>Don't just take our word for it - here's what our clients have to say about working with us</p>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-image">
+                            <img src="../assets/client1.jpg" alt="Sarah Johnson">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                        </div>
+                        <div class="client-info">
+                            <h3>Sarah Johnson</h3>
+                            <p>CEO, TechStart</p>
+                        </div>
                     </div>
-                    <div class="client-info">
-                        <h3>Sarah Johnson</h3>
-                        <p>CEO, TechStart</p>
+                    <div class="testimonial-body">
+                        <p>"Naiyo24 transformed our online presence completely. Their team delivered a stunning website that perfectly represents our brand. The results have been outstanding with a 300% increase in leads!"</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="project-info">
+                            <span><i class="fas fa-tag"></i> Web Development</span>
+                            <span><i class="fas fa-calendar-alt"></i> Jan 2023</span>
+                        </div>
                     </div>
                 </div>
-                <div class="testimonial-body">
-                    <p>"Naiyo24 transformed our online presence completely. Their team delivered a stunning website that perfectly represents our brand. The results have been outstanding!"</p>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-image">
+                            <img src="../assets/client2.jpg" alt="Michael Chen">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                        </div>
+                        <div class="client-info">
+                            <h3>Michael Chen</h3>
+                            <p>Founder, GrowthLab</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-body">
+                        <p>"Working with Naiyo24 was a game-changer for our business. Their digital marketing strategies helped us reach new customers and increase our revenue by 150% in just 6 months."</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="project-info">
+                            <span><i class="fas fa-tag"></i> Digital Marketing</span>
+                            <span><i class="fas fa-calendar-alt"></i> Aug 2022</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-footer">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-image">
+                            <img src="../assets/client3.jpg" alt="Emily Rodriguez">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                        </div>
+                        <div class="client-info">
+                            <h3>Emily Rodriguez</h3>
+                            <p>Marketing Director, InnovateCo</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-body">
+                        <p>"The mobile app developed by Naiyo24 has revolutionized how we interact with our customers. Their attention to detail and user experience focus is exceptional. Our customer engagement increased by 200%."</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="project-info">
+                            <span><i class="fas fa-tag"></i> Mobile App</span>
+                            <span><i class="fas fa-calendar-alt"></i> Mar 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-image">
+                            <img src="../assets/client4.jpg" alt="David Wilson">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                        </div>
+                        <div class="client-info">
+                            <h3>David Wilson</h3>
+                            <p>CTO, FutureTech</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-body">
+                        <p>"Naiyo24's team went above and beyond to deliver our e-commerce platform. Their technical expertise and project management skills are truly impressive. We've seen a 400% increase in online sales."</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="project-info">
+                            <span><i class="fas fa-tag"></i> E-commerce</span>
+                            <span><i class="fas fa-calendar-alt"></i> Nov 2022</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-image">
+                            <img src="../assets/client5.jpg" alt="Lisa Thompson">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                        </div>
+                        <div class="client-info">
+                            <h3>Lisa Thompson</h3>
+                            <p>Owner, Creative Solutions</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-body">
+                        <p>"The SEO optimization work done by Naiyo24 has dramatically improved our search rankings. Their strategies are effective and their team is always available for support. Organic traffic up 250%!"</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="project-info">
+                            <span><i class="fas fa-tag"></i> SEO Services</span>
+                            <span><i class="fas fa-calendar-alt"></i> May 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-image">
+                            <img src="../assets/client6.jpg" alt="Robert Kim">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                        </div>
+                        <div class="client-info">
+                            <h3>Robert Kim</h3>
+                            <p>Director, Global Enterprises</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-body">
+                        <p>"Naiyo24's custom software solution has streamlined our operations and improved efficiency by 60%. Their team understood our needs perfectly and delivered beyond expectations."</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="project-info">
+                            <span><i class="fas fa-tag"></i> Custom Software</span>
+                            <span><i class="fas fa-calendar-alt"></i> Sep 2022</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Testimonial 2 -->
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="client-image">
-                        <img src="../images/client2.jpg" alt="Client 2">
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>200+</h3>
+                        <p>Projects Completed</p>
                     </div>
-                    <div class="client-info">
-                        <h3>Michael Chen</h3>
-                        <p>Founder, GrowthLab</p>
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>Happy Clients</p>
                     </div>
-                </div>
-                <div class="testimonial-body">
-                    <p>"Working with Naiyo24 was a game-changer for our business. Their digital marketing strategies helped us reach new customers and increase our revenue significantly."</p>
-                </div>
-                <div class="testimonial-footer">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="stat-item">
+                        <h3>10+</h3>
+                        <p>Industry Awards</p>
                     </div>
-                </div>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="client-image">
-                        <img src="../images/client3.jpg" alt="Client 3">
-                    </div>
-                    <div class="client-info">
-                        <h3>Emily Rodriguez</h3>
-                        <p>Marketing Director, InnovateCo</p>
-                    </div>
-                </div>
-                <div class="testimonial-body">
-                    <p>"The mobile app developed by Naiyo24 has revolutionized how we interact with our customers. Their attention to detail and user experience focus is exceptional."</p>
-                </div>
-                <div class="testimonial-footer">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonial 4 -->
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="client-image">
-                        <img src="../images/client4.jpg" alt="Client 4">
-                    </div>
-                    <div class="client-info">
-                        <h3>David Wilson</h3>
-                        <p>CTO, FutureTech</p>
-                    </div>
-                </div>
-                <div class="testimonial-body">
-                    <p>"Naiyo24's team went above and beyond to deliver our e-commerce platform. Their technical expertise and project management skills are truly impressive."</p>
-                </div>
-                <div class="testimonial-footer">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonial 5 -->
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="client-image">
-                        <img src="../images/client5.jpg" alt="Client 5">
-                    </div>
-                    <div class="client-info">
-                        <h3>Lisa Thompson</h3>
-                        <p>Owner, Creative Solutions</p>
-                    </div>
-                </div>
-                <div class="testimonial-body">
-                    <p>"The SEO optimization work done by Naiyo24 has dramatically improved our search rankings. Their strategies are effective and their team is always available for support."</p>
-                </div>
-                <div class="testimonial-footer">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonial 6 -->
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="client-image">
-                        <img src="../images/client6.jpg" alt="Client 6">
-                    </div>
-                    <div class="client-info">
-                        <h3>Robert Kim</h3>
-                        <p>Director, Global Enterprises</p>
-                    </div>
-                </div>
-                <div class="testimonial-body">
-                    <p>"Naiyo24's custom software solution has streamlined our operations and improved efficiency. Their team understood our needs perfectly and delivered beyond expectations."</p>
-                </div>
-                <div class="testimonial-footer">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>Client Satisfaction</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
+    <!-- Video Testimonials -->
+    <section class="video-testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">In Their Words</span>
+                <h2>Video <span>Testimonials</span></h2>
+                <p>See and hear directly from our clients about their experiences</p>
+            </div>
+            
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <img src="../assets/video-thumbnail1.jpg" alt="Video Testimonial">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>TechStart Case Study</h3>
+                        <p>Sarah Johnson shares how Naiyo24 transformed their digital presence</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <img src="../assets/video-thumbnail2.jpg" alt="Video Testimonial">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>GrowthLab Success Story</h3>
+                        <p>Michael Chen discusses their 150% revenue growth with our help</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
     <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Join Our Happy Clients?</h2>
-            <p>Let's discuss how we can help you achieve your digital goals</p>
-            <a href="contact.html" class="cta-button primary">Get in Touch</a>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Join Our Happy Clients?</h2>
+                <p>Let's discuss how we can help you achieve your digital goals and take your business to the next level.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="cta-button primary">Get in Touch</a>
+                    <a href="tel:+11234567890" class="cta-button secondary">
+                        <i class="fas fa-phone"></i> Call Us Now
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Naiyo24</h3>
-                <p>Your Digital Transformation Partner</p>
-                <p>We help businesses transform their digital presence with cutting-edge solutions.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col about">
+                    <a href="../index.html" class="logo">Naiyo<span>24</span></a>
+                    <p>Your Digital Transformation Partner helping businesses grow with cutting-edge technology solutions since 2020.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col services">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#web">Web Development</a></li>
+                        <li><a href="services.html#mobile">Mobile Apps</a></li>
+                        <li><a href="services.html#ecommerce">E-commerce</a></li>
+                        <li><a href="services.html#ui-ux">UI/UX Design</a></li>
+                        <li><a href="services.html#seo">SEO Services</a></li>
+                        <li><a href="services.html#maintenance">Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Business Street, City, Country</li>
+                        <li><i class="fas fa-phone"></i> +1 (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> info@naiyo24.com</li>
+                    </ul>
+                    <div class="newsletter">
+                        <h4>Subscribe to Newsletter</h4>
+                        <form>
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="../index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="about.html">About Us</a>
-                <a href="testimonials.html">Testimonials</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h3>Services</h3>
-                <a href="services.html#web-development">Web Development</a>
-                <a href="services.html#mobile-apps">Mobile Apps</a>
-                <a href="services.html#custom-software">Custom Software</a>
-                <a href="services.html#ui-ux">UI/UX Design</a>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p><i class="fas fa-envelope"></i> info@naiyo24.com</p>
-                <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Business Street, City</p>
-                <div class="newsletter">
-                    <h4>Subscribe to Our Newsletter</h4>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Naiyo24. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookies Policy</a>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Naiyo24. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/11234567890" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../js/navbar.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
