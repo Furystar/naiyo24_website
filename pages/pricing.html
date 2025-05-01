@@ -1,449 +1,601 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Naiyo24 - Affordable Pricing Plans. Choose the perfect plan for your business needs with our web development services.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Naiyo24 - Affordable Pricing Plans. Choose the perfect plan for your business needs with our web development services."
+    />
     <title>Pricing - Naiyo24 Web Solutions</title>
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/pricing.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/pricing.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <a href="../index.html" class="logo">Naiyo<span>24</span></a>
-            <div class="nav-links">
-                <a href="../index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="pricing.html" class="active">Pricing</a>
-                <a href="testimonials.html">Testimonials</a>
-                <a href="contact.html" class="cta-nav">Contact</a>
-            </div>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="container">
+        <a href="../index.html" class="logo">Naiyo<span>24</span></a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="pricing.html" class="active">Pricing</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="contact.html" class="cta-nav">Contact</a>
         </div>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </nav>
 
     <!-- Pricing Hero Section -->
     <section class="pricing-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Transparent Pricing for Powerful Websites</h1>
-                <p>No hidden fees. Choose the perfect plan for your business needs with our all-inclusive packages.</p>
-                <div class="trust-badges">
-                    <div class="badge">
-                        <i class="fas fa-check-circle"></i>
-                        <span>No Surprise Charges</span>
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-award"></i>
-                        <span>30-Day Support</span>
-                    </div>
-                    <div class="badge">
-                        <i class="fas fa-lock"></i>
-                        <span>Money Back Guarantee</span>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>Transparent Pricing for Powerful Websites</h1>
+          <p>
+            No hidden fees. Choose the perfect plan for your business needs with
+            our all-inclusive packages.
+          </p>
+          <div class="trust-badges">
+            <div class="badge">
+              <i class="fas fa-check-circle"></i>
+              <span>No Surprise Charges</span>
             </div>
+            <div class="badge">
+              <i class="fas fa-award"></i>
+              <span>30-Day Support</span>
+            </div>
+            <div class="badge">
+              <i class="fas fa-lock"></i>
+              <span>Money Back Guarantee</span>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Pricing Plans -->
     <section class="pricing-plans">
-        <div class="container">
-            <div class="section-header">
-                <span class="subtitle">FLEXIBLE PLANS</span>
-                <h2>Choose Your Perfect Package</h2>
-                <p>All plans include free consultation and project estimation</p>
-            </div>
-
-            <div class="pricing-toggle">
-                <span>Billed per project</span>
-                <label class="switch">
-                    <input type="checkbox" id="billingToggle">
-                    <span class="slider round"></span>
-                </label>
-                <span>Monthly payment plans</span>
-            </div>
-
-            <!-- Mobile Dropdown Plans Selector -->
-            <div class="mobile-plans-dropdown">
-                <select id="mobilePlanSelector" class="plan-selector">
-                    <option value="" disabled selected>Select a Plan</option>
-                    <option value="starter">Starter - ₹14,999</option>
-                    <option value="professional">Professional - ₹35,999</option>
-                    <option value="enterprise">Enterprise - ₹50,999+</option>
-                </select>
-                
-                <div class="mobile-plan-content" id="starterPlan">
-                    <!-- Content will be filled by JavaScript -->
-                </div>
-                <div class="mobile-plan-content" id="professionalPlan">
-                    <!-- Content will be filled by JavaScript -->
-                </div>
-                <div class="mobile-plan-content" id="enterprisePlan">
-                    <!-- Content will be filled by JavaScript -->
-                </div>
-            </div>
-
-            <div class="plans-grid">
-                <!-- Basic Plan -->
-                <div class="plan-card">
-                    <div class="plan-header">
-                        <h3>Starter</h3>
-                        <div class="price-box">
-                            <div class="price">₹14,999</div>
-                            <div class="period">one-time payment</div>
-                        </div>
-                        <p>Perfect for small businesses and startups</p>
-                        <div class="popular-tag mobile-only">Best for Beginners</div>
-                    </div>
-                    <div class="plan-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Custom Website Design (Up to 8 Pages)</li>
-                            <li><i class="fas fa-check-circle"></i> Mobile-Responsive Design</li>
-                            <li><i class="fas fa-check-circle"></i> Secure Domain & Hosting (1 Year)</li>
-                            <li><i class="fas fa-check-circle"></i> SSL Certificate</li>
-                            <li><i class="fas fa-check-circle"></i> Basic Contact Form</li>
-                            <li><i class="fas fa-check-circle"></i> Basic SEO Setup (First Month FREE)</li>
-                            <li><i class="fas fa-check-circle"></i> 24/7 Customer Support</li>
-                        </ul>
-                    </div>
-                    <div class="plan-addons">
-                        <h4>Recommended Add-ons:</h4>
-                        <div class="addon-item">
-                            <span>Advanced SEO</span>
-                            <span>+₹15,000</span>
-                        </div>
-                        <div class="addon-item">
-                            <span>Maintenance & Hosting</span>
-                            <span>₹2,000/month</span>
-                        </div>
-                    </div>
-                    <div class="plan-footer">
-                        <a href="contact.html" class="plan-button">Get Started</a>
-                        <a href="services.html" class="plan-link">See all features <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Professional Plan (Featured) -->
-                <div class="plan-card featured">
-                    <div class="popular-tag">Most Popular</div>
-                    <div class="plan-header">
-                        <h3>Professional</h3>
-                        <div class="price-box">
-                            <div class="price">₹35,999</div>
-                            <div class="period">one-time payment</div>
-                        </div>
-                        <p>Ideal for growing businesses</p>
-                    </div>
-                    <div class="plan-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Custom Website Design (Up to 17 Pages)</li>
-                            <li><i class="fas fa-check-circle"></i> Mobile-First, SEO-Optimized Layout</li>
-                            <li><i class="fas fa-check-circle"></i> Domain & Hosting (1 Year)</li>
-                            <li><i class="fas fa-check-circle"></i> SSL Security + Speed Optimization</li>
-                            <li><i class="fas fa-check-circle"></i> Advanced Contact Forms (with CRM Integration)</li>
-                            <li><i class="fas fa-check-circle"></i> Blog Setup</li>
-                            <li><i class="fas fa-check-circle"></i> Social Media Integration</li>
-                            <li><i class="fas fa-check-circle"></i> Photo Gallery / Portfolio Display</li>
-                            <li><i class="fas fa-check-circle"></i> Admin Panel (CMS Lite)</li>
-                            <li><i class="fas fa-check-circle"></i> Monthly Backup System</li>
-                            <li><i class="fas fa-check-circle"></i> 24/7 Priority Support</li> 
-                            <li><i class="fas fa-check-circle"></i> Google Analytics Setup</li>
-                        </ul>
-                    </div>
-                    <div class="plan-addons">
-                        <h4>Recommended Add-ons:</h4>
-                        <div class="addon-item">
-                            <span>Maintenance & Hosting</span>
-                            <span>₹2,000/month</span>
-                        </div>
-                    </div>
-                    <div class="plan-footer">
-                        <a href="contact.html" class="plan-button primary">Get Started</a>
-                        <a href="services.html" class="plan-link">See all features <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Enterprise Plan -->
-                <div class="plan-card">
-                    <div class="plan-header">
-                        <h3>Enterprise</h3>
-                        <div class="price-box">
-                            <div class="price">₹50,999+</div>
-                            <div class="period">custom quote</div>
-                        </div>
-                        <p>For large scale businesses and corporations</p>
-                        <div class="popular-tag mobile-only">Premium Solution</div>
-                    </div>
-                    <div class="plan-features">
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Fully Custom Website Development (Unlimited Pages)</li>
-                            <li><i class="fas fa-check-circle"></i> Tailored Designs for Business-Specific Needs</li>
-                            <li><i class="fas fa-check-circle"></i> E-commerce Integration</li>
-                            <li><i class="fas fa-check-circle"></i> Advanced Web Applications (CRM Systems, Booking Systems, etc.)</li>
-                            <li><i class="fas fa-check-circle"></i> Membership Systems & User Accounts (Optional)</li>
-                            <li><i class="fas fa-check-circle"></i> Multi-Language Support (Optional)</li>
-                            <li><i class="fas fa-check-circle"></i> Advanced Speed Optimization</li>
-                            <li><i class="fas fa-check-circle"></i> Custom Admin Panel</li>
-                            <li><i class="fas fa-check-circle"></i> Daily Backup & Security Firewall</li>
-                            <li><i class="fas fa-check-circle"></i> DDOS Protection</li>
-                            <li><i class="fas fa-check-circle"></i> Google Analytics & Paid Ads Pixel Setup</li>
-                            <li><i class="fas fa-check-circle"></i> Full SEO Strategy (First Month FREE)</li>
-                            <li><i class="fas fa-check-circle"></i> 24/7 Dedicated Manager Support</li>
-                        </ul>
-                    </div>
-                    <div class="plan-addons">
-                        <h4>Custom Solutions:</h4>
-                        <div class="addon-item">
-                            <span>Custom Quote Range</span>
-                            <span>₹50,999 - ₹1,20,000</span>
-                        </div>
-                        <div class="addon-item">
-                            <span>Maintenance & Premium Hosting</span>
-                            <span>₹2,000/week</span>
-                        </div>
-                    </div>
-                    <div class="plan-footer">
-                        <a href="contact.html" class="plan-button">Get Custom Quote</a>
-                        <a href="services.html" class="plan-link">See all features <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="subtitle">FLEXIBLE PLANS</span>
+          <h2>Choose Your Perfect Package</h2>
+          <p>All plans include free consultation and project estimation</p>
         </div>
-    </section>
 
+        <div class="pricing-toggle">
+          <span>Billed per project</span>
+          <label class="switch">
+            <input type="checkbox" id="billingToggle" />
+            <span class="slider round"></span>
+          </label>
+          <span>Monthly payment plans</span>
+        </div>
+
+        <!-- Mobile Dropdown Plans Selector -->
+        <div class="mobile-plans-dropdown">
+          <select id="mobilePlanSelector" class="plan-selector">
+            <option value="" disabled selected>Select a Plan</option>
+            <option value="starter">Starter - ₹14,999</option>
+            <option value="professional">Professional - ₹35,999</option>
+            <option value="enterprise">Enterprise - ₹50,999+</option>
+          </select>
+
+          <div class="mobile-plan-content" id="starterPlan">
+            <!-- Content will be filled by JavaScript -->
+          </div>
+          <div class="mobile-plan-content" id="professionalPlan">
+            <!-- Content will be filled by JavaScript -->
+          </div>
+          <div class="mobile-plan-content" id="enterprisePlan">
+            <!-- Content will be filled by JavaScript -->
+          </div>
+        </div>
+
+        <div class="plans-grid">
+          <!-- Basic Plan -->
+          <div class="plan-card">
+            <div class="plan-header">
+              <h3>Starter</h3>
+              <div class="price-box">
+                <div class="price">₹14,999</div>
+                <div class="period">one-time payment</div>
+              </div>
+              <p>Perfect for small businesses and startups</p>
+              <div class="popular-tag mobile-only">Best for Beginners</div>
+            </div>
+            <div class="plan-features">
+              <ul>
+                <li>
+                  <i class="fas fa-check-circle"></i> Custom Website Design (Up
+                  to 8 Pages)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Mobile-Responsive Design
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Secure Domain & Hosting (1
+                  Year)
+                </li>
+                <li><i class="fas fa-check-circle"></i> SSL Certificate</li>
+                <li><i class="fas fa-check-circle"></i> Basic Contact Form</li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Basic SEO Setup (First
+                  Month FREE)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> 24/7 Customer Support
+                </li>
+              </ul>
+            </div>
+            <div class="plan-addons">
+              <h4>Recommended Add-ons:</h4>
+              <div class="addon-item">
+                <span>Advanced SEO</span>
+                <span>+₹15,000</span>
+              </div>
+              <div class="addon-item">
+                <span>Maintenance & Hosting</span>
+                <span>₹2,000/month</span>
+              </div>
+            </div>
+            <div class="plan-footer">
+              <a href="contact.html" class="plan-button">Get Started</a>
+              <a href="services.html" class="plan-link"
+                >See all features <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Professional Plan (Featured) -->
+          <div class="plan-card featured">
+            <div class="popular-tag">Most Popular</div>
+            <div class="plan-header">
+              <h3>Professional</h3>
+              <div class="price-box">
+                <div class="price">₹35,999</div>
+                <div class="period">one-time payment</div>
+              </div>
+              <p>Ideal for growing businesses</p>
+            </div>
+            <div class="plan-features">
+              <ul>
+                <li>
+                  <i class="fas fa-check-circle"></i> Custom Website Design (Up
+                  to 17 Pages)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Mobile-First,
+                  SEO-Optimized Layout
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Domain & Hosting (1 Year)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> SSL Security + Speed
+                  Optimization
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Advanced Contact Forms
+                  (with CRM Integration)
+                </li>
+                <li><i class="fas fa-check-circle"></i> Blog Setup</li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Social Media Integration
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Photo Gallery / Portfolio
+                  Display
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Admin Panel (CMS Lite)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Monthly Backup System
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> 24/7 Priority Support
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Google Analytics Setup
+                </li>
+              </ul>
+            </div>
+            <div class="plan-addons">
+              <h4>Recommended Add-ons:</h4>
+              <div class="addon-item">
+                <span>Maintenance & Hosting</span>
+                <span>₹2,000/month</span>
+              </div>
+            </div>
+            <div class="plan-footer">
+              <a href="contact.html" class="plan-button primary">Get Started</a>
+              <a href="services.html" class="plan-link"
+                >See all features <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="plan-card">
+            <div class="plan-header">
+              <h3>Enterprise</h3>
+              <div class="price-box">
+                <div class="price">₹50,999+</div>
+                <div class="period">custom quote</div>
+              </div>
+              <p>For large scale businesses and corporations</p>
+              <div class="popular-tag mobile-only">Premium Solution</div>
+            </div>
+            <div class="plan-features">
+              <ul>
+                <li>
+                  <i class="fas fa-check-circle"></i> Fully Custom Website
+                  Development (Unlimited Pages)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Tailored Designs for
+                  Business-Specific Needs
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> E-commerce Integration
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Advanced Web Applications
+                  (CRM Systems, Booking Systems, etc.)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Membership Systems & User
+                  Accounts (Optional)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Multi-Language Support
+                  (Optional)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Advanced Speed
+                  Optimization
+                </li>
+                <li><i class="fas fa-check-circle"></i> Custom Admin Panel</li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Daily Backup & Security
+                  Firewall
+                </li>
+                <li><i class="fas fa-check-circle"></i> DDOS Protection</li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Google Analytics & Paid
+                  Ads Pixel Setup
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Full SEO Strategy (First
+                  Month FREE)
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> 24/7 Dedicated Manager
+                  Support
+                </li>
+              </ul>
+            </div>
+            <div class="plan-addons">
+              <h4>Custom Solutions:</h4>
+              <div class="addon-item">
+                <span>Custom Quote Range</span>
+                <span>₹50,999 - ₹1,20,000</span>
+              </div>
+              <div class="addon-item">
+                <span>Maintenance & Premium Hosting</span>
+                <span>₹2,000/week</span>
+              </div>
+            </div>
+            <div class="plan-footer">
+              <a href="contact.html" class="plan-button">Get Custom Quote</a>
+              <a href="services.html" class="plan-link"
+                >See all features <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Value Proposition -->
     <section class="value-proposition">
-        <div class="container">
-            <div class="value-grid">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Fast Delivery</h3>
-                    <p>Get your website live in as little as 7 days with our efficient development process.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Risk-Free</h3>
-                    <p>30-day money back guarantee if you're not completely satisfied with our work.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Dedicated Support</h3>
-                    <p>Our team is available 24/7 to answer your questions and provide assistance.</p>
-                </div>
+      <div class="container">
+        <div class="value-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-rocket"></i>
             </div>
+            <h3>Fast Delivery</h3>
+            <p>
+              Get your website live in as little as 7 days with our efficient
+              development process.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Risk-Free</h3>
+            <p>
+              30-day money back guarantee if you're not completely satisfied
+              with our work.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>Dedicated Support</h3>
+            <p>
+              Our team is available 24/7 to answer your questions and provide
+              assistance.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Frequently Asked Questions</h2>
-                <p>Find answers to common questions about our pricing and services</p>
-            </div>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What's included in the hosting?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>All our plans include 1 year of premium hosting with 99.9% uptime guarantee, free SSL certificate, and daily backups. After the first year, hosting can be renewed at ₹2,000/month for Starter and Professional plans, or ₹2,000/week for Enterprise plans.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Can I upgrade my plan later?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely! You can upgrade your plan at any time. We'll simply charge the difference between your current plan and the upgraded one, prorated based on your usage.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Do you offer payment plans?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we offer flexible payment options. You can pay 50% upfront and 50% upon completion, or we can set up monthly installments for larger projects. Contact us to discuss custom payment arrangements.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>How long does development take?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Typical timelines are 1-2 weeks for Starter sites, 2-4 weeks for Professional sites, and 4-8 weeks for Enterprise solutions. These timelines depend on project complexity and how quickly we receive content/assets from you.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="faq-cta">
-                <p>Still have questions? We're happy to help!</p>
-                <a href="contact.html" class="cta-button primary">Contact Our Team</a>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>Find answers to common questions about our pricing and services</p>
         </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What's included in the hosting?</h3>
+              <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                All our plans include 1 year of premium hosting with 99.9%
+                uptime guarantee, free SSL certificate, and daily backups. After
+                the first year, hosting can be renewed at ₹2,000/month for
+                Starter and Professional plans, or ₹2,000/week for Enterprise
+                plans.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can I upgrade my plan later?</h3>
+              <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Absolutely! You can upgrade your plan at any time. We'll simply
+                charge the difference between your current plan and the upgraded
+                one, prorated based on your usage.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do you offer payment plans?</h3>
+              <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, we offer flexible payment options. You can pay 50% upfront
+                and 50% upon completion, or we can set up monthly installments
+                for larger projects. Contact us to discuss custom payment
+                arrangements.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How long does development take?</h3>
+              <i class="fas fa-plus"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Typical timelines are 1-2 weeks for Starter sites, 2-4 weeks for
+                Professional sites, and 4-8 weeks for Enterprise solutions.
+                These timelines depend on project complexity and how quickly we
+                receive content/assets from you.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-cta">
+          <p>Still have questions? We're happy to help!</p>
+          <a href="contact.html" class="cta-button primary">Contact Our Team</a>
+        </div>
+      </div>
     </section>
 
     <!-- Testimonial Section -->
     <section class="testimonial-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="subtitle">CLIENT SUCCESS</span>
-                <h2>What Our Clients Say</h2>
-            </div>
-            <div class="testimonial-slider">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Naiyo24 built our e-commerce site on the Professional plan and it's been fantastic. Our online sales increased by 200% within the first month!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image"></div>
-                        <div class="author-info">
-                            <h4>Rajesh Mehta</h4>
-                            <span>CEO, FashionHub</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"The Starter plan was perfect for our small business. We got a beautiful, functional website at an affordable price with excellent support."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image"></div>
-                        <div class="author-info">
-                            <h4>Priya Sharma</h4>
-                            <span>Owner, Bloom Florist</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="subtitle">CLIENT SUCCESS</span>
+          <h2>What Our Clients Say</h2>
         </div>
+        <div class="testimonial-slider">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p>
+                "Naiyo24 built our e-commerce site on the Professional plan and
+                it's been fantastic. Our online sales increased by 200% within
+                the first month!"
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-image"></div>
+              <div class="author-info">
+                <h4>Rajesh Mehta</h4>
+                <span>CEO, FashionHub</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p>
+                "The Starter plan was perfect for our small business. We got a
+                beautiful, functional website at an affordable price with
+                excellent support."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-image"></div>
+              <div class="author-info">
+                <h4>Priya Sharma</h4>
+                <span>Owner, Bloom Florist</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Final CTA Section -->
     <section class="final-cta">
-        <div class="container">
-            <div class="cta-box">
-                <h2>Ready to Transform Your Online Presence?</h2>
-                <p>Get started with Naiyo24 today and receive a free consultation with our web experts.</p>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="cta-button primary">Get Your Free Quote</a>
-                    <a href="tel:+11234567890" class="cta-button secondary">
-                        <i class="fas fa-phone"></i> Call Now: +1 (123) 456-7890
-                    </a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="cta-box">
+          <h2>Ready to Transform Your Online Presence?</h2>
+          <p>
+            Get started with Naiyo24 today and receive a free consultation with
+            our web experts.
+          </p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="cta-button primary"
+              >Get Your Free Quote</a
+            >
+            <a href="tel:+917003226046" class="cta-button secondary">
+              <i class="fas fa-phone"></i> Call Now: +917003226046
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col about">
-                    <a href="../index.html" class="logo">Naiyo<span>24</span></a>
-                    <p>Your Digital Transformation Partner helping businesses grow with cutting-edge technology solutions.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col services">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="services.html#ecommerce">E-commerce</a></li>
-                        <li><a href="services.html#corporate">Corporate</a></li>
-                        <li><a href="services.html#news">News/Magazine</a></li>
-                        <li><a href="mobile-applications.html">Mobile Apps</a></li>
-                        <li><a href="web-applications.html">Web Apps</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col contact">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Business Street, City, Country</li>
-                        <li><i class="fas fa-phone"></i> +1 (123) 456-7890</li>
-                        <li><i class="fas fa-envelope"></i> info@naiyo24.com</li>
-                    </ul>
-                    <div class="newsletter">
-                        <h4>Subscribe to Newsletter</h4>
-                        <form>
-                            <input type="email" placeholder="Your Email" required>
-                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col about">
+            <a href="../index.html" class="logo">Naiyo<span>24</span></a>
+            <p>
+              Your Digital Transformation Partner helping businesses grow with
+              cutting-edge technology solutions.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Naiyo24. All rights reserved.</p>
-                <div class="legal-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Cookies Policy</a>
-                </div>
+          </div>
+          <div class="footer-col links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col services">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="services.html#ecommerce">E-commerce</a></li>
+              <li><a href="services.html#corporate">Corporate</a></li>
+              <li><a href="services.html#news">News/Magazine</a></li>
+              <li><a href="mobile-applications.html">Mobile Apps</a></li>
+              <li><a href="web-applications.html">Web Apps</a></li>
+            </ul>
+          </div>
+          <div class="footer-col contact">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 1/30B, Chittaranjan Colony
+                Baghajatin Colony Kolkata, West Bengal 700032
+              </li>
+              <li><i class="fas fa-phone"></i> +917003226046</li>
+              <li><i class="fas fa-envelope"></i> info@naiyo24.com</li>
+            </ul>
+            <div class="newsletter">
+              <h4>Subscribe to Newsletter</h4>
+              <form>
+                <input type="email" placeholder="Your Email" required />
+                <button type="submit">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </form>
             </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Naiyo24. All rights reserved.</p>
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookies Policy</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/11234567890" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-        <span class="tooltip">Chat with us!</span>
+    <a
+      href="https://wa.me/11234567890"
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <span class="tooltip">Chat with us!</span>
     </a>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
+      <i class="fas fa-arrow-up"></i>
     </button>
 
     <script src="../js/main.js"></script>
     <script src="../js/navbar.js"></script>
     <script src="../js/pricing.js"></script>
-</body>
+  </body>
 </html>
