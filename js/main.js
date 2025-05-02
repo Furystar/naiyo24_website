@@ -1,6 +1,5 @@
-// main.js
 document.addEventListener('DOMContentLoaded', function() {
-    // Back to top button
+    // Back to top button functionality
     const backToTopButton = document.querySelector('.back-to-top');
     
     window.addEventListener('scroll', function() {

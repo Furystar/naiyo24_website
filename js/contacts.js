@@ -1,229 +1,132 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    if (!contactForm) return;
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // Call Button functionality
-        const callButton = document.getElementById('callButton');
-        if (callButton) {
-            callButton.addEventListener('click', function(e) {
-                // Check if on mobile device
-                if (!isMobileDevice()) {
-                    e.preventDefault();
-                    alert('Please use a mobile device to call or dial: +91 7003226046');
-                    // Alternative: window.location.href = 'tel:+917003226046';
-                }
-                // On mobile devices, the href="tel:" will work automatically
-            });
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = 'form-notification';
+    document.body.appendChild(notification);
+
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Validate form
+        if (!validateForm()) {
+            return;
         }
-    
-        // Email Button functionality
-        const emailButton = document.getElementById('emailButton');
-        if (emailButton) {
-            emailButton.addEventListener('click', function(e) {
-                // You can add additional tracking or logic here if needed
-                console.log('Email button clicked');
-                // The href="mailto:" will work automatically
-            });
-        }
-    
-        // Mobile detection function
-        function isMobileDevice() {
-            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        // Get form data
+        const formData = {
+            name: sanitizeInput(contactForm.querySelector('#name').value.trim()),
+            email: sanitizeInput(contactForm.querySelector('#email').value.trim()),
+            phone: sanitizeInput(contactForm.querySelector('#phone').value.trim()),
+            service: sanitizeInput(contactForm.querySelector('#service').value),
+            message: sanitizeInput(contactForm.querySelector('#message').value.trim())
+        };
+
+        // Show loading state
+        const submitButton = contactForm.querySelector('.submit-button');
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<span class="button-text">Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+
+        try {
+            // Simulate API call (replace with actual fetch)
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            // Show success animation
+            showSuccessNotification(formData.name);
+            
+            // Reset form
+            contactForm.reset();
+            
+        } catch (error) {
+            showErrorNotification();
+        } finally {
+            submitButton.disabled = false;
+            submitButton.innerHTML = '<span class="button-text">Send Message</span><i class="fas fa-paper-plane"></i>';
         }
     });
 
-    
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitButton = contactForm.querySelector('.submit-button');
-            const originalText = submitButton.innerHTML;
-            
-            // Validate form before submission
-            if (!validateForm()) {
-                return;
-            }
-            
-            // Show loading state
-            submitButton.disabled = true;
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            
-            try {
-                const formData = {
-                    name: sanitizeInput(document.getElementById('name').value),
-                    email: sanitizeInput(document.getElementById('email').value),
-                    phone: sanitizeInput(document.getElementById('phone').value),
-                    service_type: sanitizeInput(document.getElementById('service').value),
-                    message: sanitizeInput(document.getElementById('message').value)
-                };
-                
-                // Using environment variable for API endpoint
-                const apiEndpoint = process.env.CONTACT_FORM_API || 'https://your-api-endpoint.com/api/submit-contact-form';
-                
-                const response = await fetch(apiEndpoint, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Requested-With': 'XMLHttpRequest'
-                    },
-                    body: JSON.stringify(formData),
-                    credentials: 'same-origin' // Include cookies if needed
-                });
-                
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    throw new Error(errorData.message || `Server responded with status ${response.status}`);
-                }
-                
-                const data = await response.json();
-                
-                // Show success message
-                showAlert('success', `Thank you, ${formData.name}! Your message has been sent. We'll contact you soon.`);
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Track successful submission (optional)
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'contact_form_submission', {
-                        'event_category': 'engagement',
-                        'event_label': 'Contact Form'
-                    });
-                }
-                
-            } catch (error) {
-                console.error('Submission error:', error);
-                showAlert('error', `Submission failed: ${error.message}`);
-                
-                // Track failed submission (optional)
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'exception', {
-                        'description': `Contact form error: ${error.message}`,
-                        'fatal': false
-                    });
-                }
-                
-            } finally {
-                // Reset button state
-                submitButton.disabled = false;
-                submitButton.innerHTML = originalText;
+    // Form validation
+    function validateForm() {
+        let isValid = true;
+        const requiredFields = contactForm.querySelectorAll('[required]');
+        
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                field.classList.add('error');
+                isValid = false;
             }
         });
+        
+        // Validate email format
+        const emailField = contactForm.querySelector('#email');
+        if (emailField.value && !isValidEmail(emailField.value)) {
+            emailField.classList.add('error');
+            isValid = false;
+        }
+        
+        return isValid;
     }
-    
-    // Form validation function
-    function validateForm() {
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-        const service = document.getElementById('service').value;
-        
-        // Simple validation
-        if (!name) {
-            showAlert('error', 'Please enter your name');
-            return false;
-        }
-        
-        if (!email) {
-            showAlert('error', 'Please enter your email address');
-            return false;
-        } else if (!isValidEmail(email)) {
-            showAlert('error', 'Please enter a valid email address');
-            return false;
-        }
-        
-        if (!service) {
-            showAlert('error', 'Please select a service');
-            return false;
-        }
-        
-        if (!message) {
-            showAlert('error', 'Please enter your message');
-            return false;
-        }
-        
-        return true;
-    }
-    
-    // Email validation
+
     function isValidEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
     }
-    
-    // Input sanitization
+
     function sanitizeInput(input) {
         const div = document.createElement('div');
         div.textContent = input;
         return div.innerHTML;
     }
-    
-    // Alert notification system
-    function showAlert(type, message) {
-        // Remove any existing alerts
-        const existingAlert = document.querySelector('.form-alert');
-        if (existingAlert) {
-            existingAlert.remove();
-        }
-        
-        const alertDiv = document.createElement('div');
-        alertDiv.className = `form-alert alert-${type}`;
-        alertDiv.innerHTML = `
-            <span>${message}</span>
-            <button class="alert-close">&times;</button>
+
+    // Notification animations
+    function showSuccessNotification(name) {
+        notification.innerHTML = `
+            <div class="notification-content success">
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                </svg>
+                <div class="notification-text">
+                    <h3>Thank you, ${name}!</h3>
+                    <p>Your message has been successfully sent.</p>
+                </div>
+            </div>
         `;
         
-        // Insert before the form
-        contactForm.parentNode.insertBefore(alertDiv, contactForm);
+        notification.classList.add('show', 'success');
         
-        // Add close button functionality
-        alertDiv.querySelector('.alert-close').addEventListener('click', function() {
-            alertDiv.remove();
-        });
-        
-        // Auto-remove after 5 seconds
+        // Auto-hide after 5 seconds
         setTimeout(() => {
-            alertDiv.remove();
+            notification.classList.remove('show');
         }, 5000);
     }
-    
-    // Add CSS for alerts (could also be in your CSS file)
-    const style = document.createElement('style');
-    style.textContent = `
-        .form-alert {
-            padding: 15px 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            animation: slideIn 0.3s ease-out;
-            position: relative;
-        }
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        .alert-error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        .alert-close {
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            padding: 0 0 0 15px;
-            color: inherit;
-        }
-        @keyframes slideIn {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-    `;
-    document.head.appendChild(style);
+
+    function showErrorNotification() {
+        notification.innerHTML = `
+            <div class="notification-content error">
+                <svg class="crossmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="crossmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                    <path class="crossmark__cross" fill="none" d="M16 16 36 36 M36 16 16 36"/>
+                </svg>
+                <div class="notification-text">
+                    <h3>Oops!</h3>
+                    <p>Something went wrong. Please try again.</p>
+                </div>
+            </div>
+        `;
+        
+        notification.classList.add('show', 'error');
+        
+        // Auto-hide after 5 seconds
+        setTimeout(() => {
+            notification.classList.remove('show');
+        }, 5000);
+    }
+
+    // Close notification when clicked
+    notification.addEventListener('click', function() {
+        this.classList.remove('show');
+    });
 });

@@ -1,4 +1,3 @@
-// Mobile App Services Page Script
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize animations
     initAnimations();
@@ -8,6 +7,35 @@ document.addEventListener('DOMContentLoaded', function() {
     if (appForm) {
         appForm.addEventListener('submit', handleFormSubmit);
     }
+
+    // Close modal buttons
+    document.querySelector('.close-modal')?.addEventListener('click', closeForm);
+    document.querySelector('.close-success-modal')?.addEventListener('click', closeSuccessModal);
+
+    // Close modals when clicking outside
+    document.getElementById('modalOverlay')?.addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeForm();
+        }
+    });
+
+    document.getElementById('successModal')?.addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeSuccessModal();
+        }
+    });
+
+    // Close modals with escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (document.getElementById('modalOverlay')?.classList.contains('active')) {
+                closeForm();
+            }
+            if (!document.getElementById('successModal')?.classList.contains('hidden')) {
+                closeSuccessModal();
+            }
+        }
+    });
 });
 
 // Initialize animations with delays
@@ -61,7 +89,6 @@ function openForm(appType) {
 // Close all modals
 function closeForm() {
     document.getElementById('modalOverlay').classList.remove('active');
-    document.getElementById('successModal').classList.add('hidden');
     document.body.style.overflow = 'auto';
 }
 
@@ -72,7 +99,7 @@ function closeSuccessModal() {
 }
 
 // Handle form submission
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
     e.preventDefault();
     
     const form = e.target;
@@ -82,26 +109,66 @@ function handleFormSubmit(e) {
     
     // Show loading state
     buttonText.textContent = 'Submitting...';
-    spinner.className = 'fas fa-spinner';
+    spinner.className = 'fas fa-spinner fa-spin';
     submitButton.insertBefore(spinner, submitButton.querySelector('i'));
     submitButton.querySelector('i').style.display = 'none';
     
-    // Simulate form submission (replace with actual AJAX call)
-    setTimeout(() => {
-        // Hide loading state
+    // Collect form data
+    const formData = {
+        name: form.querySelector('#name').value,
+        email: form.querySelector('#email').value,
+        phone: form.querySelector('#phone').value,
+        company: form.querySelector('#company').value,
+        app_type: form.querySelector('#appType').value,
+        platforms: form.querySelector('#platforms').value,
+        budget: form.querySelector('#budget').value,
+        timeline: form.querySelector('#timeline').value,
+        requirements: form.querySelector('#requirements').value
+    };
+
+    try {
+        // API endpoint (adjust based on your backend URL)
+        const API_URL = 'http://localhost:5000/api/mobile-app';
+        
+        // Send data to backend
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        
+        // Show success message
         buttonText.textContent = 'Submitted!';
+        spinner.remove();
+        
+        setTimeout(() => {
+            form.reset();
+            closeForm();
+            document.getElementById('successModal').classList.remove('hidden');
+            buttonText.textContent = 'Submit Inquiry';
+        }, 500);
+        
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        
+        // Show error state
+        buttonText.textContent = 'Error - Try Again';
         spinner.remove();
         submitButton.querySelector('i').style.display = 'inline-block';
         
-        // Show success message
+        // Reset after delay
         setTimeout(() => {
-            form.reset();
-            document.getElementById('modalOverlay').classList.remove('active');
-            document.getElementById('successModal').classList.remove('hidden');
-            submitButton.querySelector('i').style.display = 'none';
             buttonText.textContent = 'Submit Inquiry';
-        }, 500);
-    }, 1500);
+        }, 2000);
+    }
 }
 
 // Smooth scrolling for anchor links
