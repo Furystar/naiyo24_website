@@ -116,14 +116,3 @@ class ContactInquiry(db.Model):
     service_interest = db.Column(db.String(50), nullable=False)
     message = db.Column(db.Text, nullable=False)
     submitted_at = db.Column(db.DateTime, server_default=db.func.now())
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'email': self.email,
-            'phone': self.phone,
-            'service_interest': self.service_interest,
-            'message': self.message,
-            'submitted_at': self.submitted_at.isoformat() if self.submitted_at else None
-        }

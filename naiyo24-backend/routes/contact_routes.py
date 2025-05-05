@@ -1,7 +1,6 @@
+# routes/contact_routes.py
 from flask import Blueprint, request, jsonify
 from models import db, ContactInquiry
-from datetime import datetime
-import re
 
 contact_bp = Blueprint('contact', __name__)
 
@@ -16,10 +15,6 @@ def submit_contact_inquiry():
             if field not in data or not data[field]:
                 return jsonify({'error': f'{field} is required'}), 400
         
-        # Validate email format
-        if not re.match(r'^[^\s@]+@[^\s@]+\.[^\s@]+$', data['email']):
-            return jsonify({'error': 'Invalid email format'}), 400
-        
         # Create new inquiry
         inquiry = ContactInquiry(
             name=data['name'],
@@ -32,28 +27,11 @@ def submit_contact_inquiry():
         db.session.add(inquiry)
         db.session.commit()
         
-        # Prepare response data
-        response_data = {
+        return jsonify({
             'message': 'Contact inquiry submitted successfully!',
-            'inquiry_id': inquiry.id,
-            'submitted_at': inquiry.submitted_at.isoformat()
-        }
+            'inquiry_id': inquiry.id
+        }), 201
         
-        return jsonify(response_data), 201
-    
     except Exception as e:
         db.session.rollback()
         return jsonify({'error': str(e)}), 500
-
-@contact_bp.route('/api/contact/<int:inquiry_id>', methods=['GET'])
-def get_contact_inquiry(inquiry_id):
-    inquiry = ContactInquiry.query.get_or_404(inquiry_id)
-    return jsonify({
-        'id': inquiry.id,
-        'name': inquiry.name,
-        'email': inquiry.email,
-        'phone': inquiry.phone,
-        'service_interest': inquiry.service_interest,
-        'message': inquiry.message,
-        'submitted_at': inquiry.submitted_at.isoformat()
-    })

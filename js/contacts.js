@@ -7,11 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
     notification.className = 'form-notification';
     document.body.appendChild(notification);
 
+    // API configuration
+    const API_URL = 'http://localhost:5000/api/contact'; // Update with your actual API endpoint
+
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
         // Validate form
         if (!validateForm()) {
+            showErrorNotification('Please fill all required fields correctly');
             return;
         }
 
@@ -20,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: sanitizeInput(contactForm.querySelector('#name').value.trim()),
             email: sanitizeInput(contactForm.querySelector('#email').value.trim()),
             phone: sanitizeInput(contactForm.querySelector('#phone').value.trim()),
-            service: sanitizeInput(contactForm.querySelector('#service').value),
+            service_interest: sanitizeInput(contactForm.querySelector('#service').value),
             message: sanitizeInput(contactForm.querySelector('#message').value.trim())
         };
 
@@ -30,8 +34,20 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.innerHTML = '<span class="button-text">Sending...</span><i class="fas fa-spinner fa-spin"></i>';
 
         try {
-            // Simulate API call (replace with actual fetch)
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            // Send data to backend
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Failed to submit form');
+            }
             
             // Show success animation
             showSuccessNotification(formData.name);
@@ -40,7 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.reset();
             
         } catch (error) {
-            showErrorNotification();
+            console.error('Submission error:', error);
+            showErrorNotification(error.message || 'Something went wrong. Please try again.');
         } finally {
             submitButton.disabled = false;
             submitButton.innerHTML = '<span class="button-text">Send Message</span><i class="fas fa-paper-plane"></i>';
@@ -53,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const requiredFields = contactForm.querySelectorAll('[required]');
         
         requiredFields.forEach(field => {
+            field.classList.remove('error');
             if (!field.value.trim()) {
                 field.classList.add('error');
                 isValid = false;
@@ -75,9 +93,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function sanitizeInput(input) {
-        const div = document.createElement('div');
-        div.textContent = input;
-        return div.innerHTML;
+        // Basic sanitization - prevent XSS
+        return input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
     }
 
     // Notification animations
@@ -103,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
 
-    function showErrorNotification() {
+    function showErrorNotification(message = 'Something went wrong. Please try again.') {
         notification.innerHTML = `
             <div class="notification-content error">
                 <svg class="crossmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
@@ -112,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </svg>
                 <div class="notification-text">
                     <h3>Oops!</h3>
-                    <p>Something went wrong. Please try again.</p>
+                    <p>${message}</p>
                 </div>
             </div>
         `;
@@ -128,5 +145,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close notification when clicked
     notification.addEventListener('click', function() {
         this.classList.remove('show');
+    });
+
+    // Clear field errors when user starts typing
+    contactForm.querySelectorAll('input, textarea, select').forEach(field => {
+        field.addEventListener('input', function() {
+            this.classList.remove('error');
+        });
     });
 });
