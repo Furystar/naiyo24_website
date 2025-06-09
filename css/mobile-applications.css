@@ -1,16 +1,16 @@
 /* Base Styles */
 :root {
-    --primary-color: #2563eb;
-    --primary-dark: #1e40af;
-    --secondary-color: #f72585;
-    --dark-color: #14213d;
-    --light-color: #f8f9fa;
-    --gray-color: #6c757d;
-    --success-color: #4cc9f0;
+    --primary-color: #000000;
+    --primary-dark: #1a1a1a;
+    --secondary-color: #333333;
+    --dark-color: #000000;
+    --light-color: #ffffff;
+    --gray-color: #777777;
+    --success-color: #444444;
     --transition: all 0.3s ease;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.1);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.2);
     --bounce-curve: cubic-bezier(.42,0,.2,1.2);
     --elastic-curve: cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }

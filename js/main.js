@@ -125,6 +125,35 @@ document.addEventListener('DOMContentLoaded', function() {
         companies.forEach(company => {
             track.appendChild(createPartnerItem(company));
         });
+
+        // Add pause on hover/click functionality
+        const carousel = document.querySelector('.partner-carousel');
+        if (carousel) {
+            carousel.addEventListener('mouseenter', () => {
+                track.style.animationPlayState = 'paused';
+            });
+            
+            carousel.addEventListener('mouseleave', () => {
+                track.style.animationPlayState = 'running';
+            });
+            
+            carousel.addEventListener('mousedown', () => {
+                track.style.animationPlayState = 'paused';
+            });
+            
+            carousel.addEventListener('mouseup', () => {
+                track.style.animationPlayState = 'running';
+            });
+            
+            // For touch devices
+            carousel.addEventListener('touchstart', () => {
+                track.style.animationPlayState = 'paused';
+            });
+            
+            carousel.addEventListener('touchend', () => {
+                track.style.animationPlayState = 'running';
+            });
+        }
     }
 
     setupPartnerCarousel();

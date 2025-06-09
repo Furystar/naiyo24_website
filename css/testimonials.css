@@ -1,23 +1,23 @@
 :root {
-    --primary-color: #2563eb;
-    --primary-dark: #1e40af;
-    --secondary-color: #f59e0b;
-    --dark-color: #1f2937;
-    --light-color: #f9fafb;
-    --gray-color: #6b7280;
-    --border-color: #e5e7eb;
-    --light-bg: #f3f4f6;
+    --primary-color: #000000;
+    --primary-dark: #1a1a1a;
+    --secondary-color: #333333;
+    --dark-color: #000000;
+    --light-color: #ffffff;
+    --gray-color: #777777;
+    --border-color: #e0e0e0;
+    --light-bg: #f5f5f5;
     --transition: all 0.3s ease;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
     --bounce-curve: cubic-bezier(.42,0,.2,1.2);
     --elastic-curve: cubic-bezier(0.68, -0.6, 0.32, 1.6);
     --smooth-curve: cubic-bezier(0.45, 0, 0.55, 1);
-    --glow-color-primary: rgba(37, 99, 235, 0.5);
-    --glow-color-secondary: rgba(245, 158, 11, 0.5);
-    --card-bg-gradient: linear-gradient(145deg, #ffffff, #f8fafc);
+    --glow-color-primary: rgba(0, 0, 0, 0.2);
+    --glow-color-secondary: rgba(51, 51, 51, 0.2);
+    --card-bg-gradient: linear-gradient(145deg, #ffffff, #f8f8f8);
 }
 
 /* Base Styles (excluding navbar) */
@@ -52,7 +52,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232563eb' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23000000' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
     animation: subtle-float 20s infinite alternate ease-in-out;
 }
 
@@ -81,8 +81,9 @@ body {
 }
 
 .testimonials-hero h1 span {
-    color: var(--primary-color);
+    color: var(--dark-color);
     position: relative;
+    font-style: italic;
 }
 
 .testimonials-hero h1 span::after {
@@ -92,7 +93,7 @@ body {
     left: 0;
     width: 100%;
     height: 10px;
-    background-color: rgba(37, 99, 235, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
     z-index: -1;
     border-radius: 3px;
     transform: scaleX(0);
@@ -134,8 +135,8 @@ body {
 .section-header .subtitle {
     display: inline-block;
     font-size: 14px;
-    color: var(--primary-color);
-    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--dark-color);
+    background-color: rgba(0, 0, 0, 0.05);
     padding: 5px 15px;
     border-radius: 50px;
     margin-bottom: 15px;
@@ -152,7 +153,8 @@ body {
 }
 
 .section-header h2 span {
-    color: var(--primary-color);
+    color: var(--dark-color);
+    font-style: italic;
 }
 
 .section-header p {
@@ -195,7 +197,7 @@ body {
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(to bottom, var(--dark-color), var(--secondary-color));
     transition: all 0.5s var(--bounce-curve);
 }
 
@@ -893,7 +895,7 @@ footer {
     right: 30px;
     width: 60px;
     height: 60px;
-    background-color: #25D366;
+    background-color: var(--dark-color);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -904,10 +906,13 @@ footer {
     z-index: 999;
     transition: var(--transition);
     animation: pulse 2s infinite;
+    border: 2px solid white;
 }
 
 .whatsapp-float:hover {
     transform: scale(1.1);
+    background-color: white;
+    color: var(--dark-color);
     box-shadow: var(--shadow-xl);
 }
 

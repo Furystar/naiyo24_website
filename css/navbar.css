@@ -1,16 +1,16 @@
 /* navbar.css */
 :root {
-    --primary-color: #2563eb;
-    --primary-dark: #1e40af;
-    --secondary-color: #f59e0b;
-    --dark-color: #1f2937;
-    --light-color: #f9fafb;
-    --gray-color: #6b7280;
+    --primary-color: #000000;
+    --primary-dark: #1a1a1a;
+    --secondary-color: #333333;
+    --dark-color: #000000;
+    --light-color: #ffffff;
+    --gray-color: #777777;
     --transition: all 0.3s ease;
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
     --font-jaldi: 'Jaldi', sans-serif;
 }
 
@@ -37,19 +37,20 @@ body {
 /* Navigation Styles */
 .navbar {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0;    left: 0;
     width: 100%;
-    background-color: white;
+    background-color: #ffffff;
     box-shadow: var(--shadow-sm);
     z-index: 1000;
     padding: 15px 0;
     transition: var(--transition);
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .navbar.scrolled {
     padding: 10px 0;
     box-shadow: var(--shadow);
+    background-color: rgba(255, 255, 255, 0.98);
 }
 
 .navbar .container {
@@ -66,10 +67,12 @@ body {
     text-decoration: none;
     display: flex;
     align-items: center;
+    letter-spacing: 1px;
 }
 
 .logo span {
-    color: var(--primary-color);
+    color: var(--secondary-color);
+    font-style: italic;
 }
 
 .nav-links {
@@ -85,47 +88,54 @@ body {
     font-size: 16px;
     transition: var(--transition);
     position: relative;
+    letter-spacing: 0.5px;
 }
 
 .nav-links a:not(.cta-nav):hover {
-    color: var(--primary-color);
+    color: #444444;
 }
 
-.nav-links a:not(.cta-nav)::after {
+.nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -2px;
     left: 0;
-    width: 0;
+    width: 100%;
     height: 2px;
-    background-color: var(--primary-color);
-    transition: var(--transition);
+    background-color: var(--dark-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
 }
 
-.nav-links a:not(.cta-nav):hover::after {
-    width: 100%;
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .nav-links a.active {
-    color: var(--primary-color);
+    color: var(--dark-color);
+    font-weight: 600;
 }
 
 .nav-links a.active::after {
-    width: 100%;
+    transform: scaleX(1);
 }
 
 .cta-nav {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
+    color: var(--dark-color);
     transition: var(--transition);
+    font-weight: 600;
+    position: relative;
 }
 
 .cta-nav:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
+    color: var(--dark-color);
+}
+
+.cta-nav:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .hamburger {
