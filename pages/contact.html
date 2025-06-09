@@ -17,13 +17,13 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
-    />
-    <link
+    />    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link rel="stylesheet" href="../css/navbar.css" />
     <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="../css/contact-fix.css" />
   </head>
   <body>
     <!-- Navigation -->
@@ -160,10 +160,8 @@
                   placeholder="Tell us about your project"
                 ></textarea>
                 <div class="input-highlight"></div>
-              </div>
-
-              <button type="submit" class="submit-button">
-                <span>Send Message</span>
+              </div>              <button type="submit" class="submit-button" style="position: relative; z-index: 100; pointer-events: auto;">
+                <span class="button-text">Send Message</span>
                 <i class="fas fa-paper-plane"></i>
                 <div class="button-hover-effect"></div>
               </button>

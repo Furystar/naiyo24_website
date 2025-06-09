@@ -12,6 +12,9 @@
     --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --bounce-curve: cubic-bezier(.42,0,.2,1.2);
+    --elastic-curve: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    --smooth-curve: cubic-bezier(0.45, 0, 0.55, 1);
 }
 
 /* Base Styles */
@@ -38,7 +41,7 @@ body {
 
 /* Contact Hero Section */
 .contact-hero {
-    padding: 40px 0 100px;
+    padding: 140px 0 100px;
     background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     text-align: center;
     position: relative;
@@ -54,6 +57,13 @@ body {
     width: 100%;
     height: 100%;
     background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232563eb' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.8;
+    animation: backgroundFloat 30s linear infinite alternate;
+}
+
+@keyframes backgroundFloat {
+    0% { background-position: 0px 0px; }
+    100% { background-position: 50px 50px; }
 }
 
 .contact-hero h1 {
@@ -63,11 +73,28 @@ body {
     margin-bottom: 15px;
     position: relative;
     z-index: 1;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    animation: heroHeading 1.2s var(--elastic-curve) forwards;
+    letter-spacing: -0.5px;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes heroHeading {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .contact-hero h1 span {
     color: var(--primary-color);
     position: relative;
+    display: inline-block;
 }
 
 .contact-hero h1 span::after {
@@ -80,6 +107,14 @@ body {
     background-color: rgba(37, 99, 235, 0.2);
     z-index: -1;
     border-radius: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: underlineReveal 1s var(--elastic-curve) forwards 0.5s;
+}
+
+@keyframes underlineReveal {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
 }
 
 .contact-hero .subtitle {
@@ -89,39 +124,14 @@ body {
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.8s;
 }
 
-.breadcrumbs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
-    font-size: 14px;
-    position: relative;
-    z-index: 1;
+@keyframes fadeIn {
+    to { opacity: 1; }
 }
 
-.breadcrumbs a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.breadcrumbs a:hover {
-    text-decoration: underline;
-}
-
-.breadcrumbs i {
-    font-size: 12px;
-    color: var(--gray-color);
-}
-
-.breadcrumbs span {
-    color: var(--gray-color);
-}
-
-/* Hero Shapes */
 .hero-shapes {
     position: absolute;
     top: 0;
@@ -132,34 +142,44 @@ body {
     z-index: 0;
 }
 
-.hero-shapes .shape {
+.shape {
     position: absolute;
     border-radius: 50%;
-    background: rgba(37, 99, 235, 0.1);
-    animation: pulse 4s infinite;
+    filter: blur(40px);
+    opacity: 0.3;
 }
 
-.hero-shapes .shape-1 {
+.shape-1 {
     width: 300px;
     height: 300px;
+    background: radial-gradient(circle, var(--primary-color) 0%, rgba(37, 99, 235, 0) 70%);
     top: -150px;
-    right: -150px;
+    right: 10%;
+    animation: floatAnimation 8s infinite alternate ease-in-out;
 }
 
-.hero-shapes .shape-2 {
+.shape-2 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, var(--secondary-color) 0%, rgba(245, 158, 11, 0) 70%);
+    bottom: -100px;
+    left: 15%;
+    animation: floatAnimation 12s infinite alternate-reverse ease-in-out;
+}
+
+.shape-3 {
     width: 200px;
     height: 200px;
-    bottom: 100px;
-    left: -100px;
-    animation-delay: 1s;
+    background: radial-gradient(circle, #10b981 0%, rgba(16, 185, 129, 0) 70%);
+    top: 30%;
+    left: 5%;
+    animation: floatAnimation 10s infinite alternate ease-in-out 2s;
 }
 
-.hero-shapes .shape-3 {
-    width: 150px;
-    height: 150px;
-    bottom: -50px;
-    right: 200px;
-    animation-delay: 2s;
+@keyframes floatAnimation {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(20px, -20px) rotate(5deg); }
+    100% { transform: translate(-20px, 20px) rotate(-5deg); }
 }
 
 /* Contact Content */
@@ -213,17 +233,33 @@ body {
 
 /* Contact Form */
 .contact-form {
-    background-color: white;
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
     padding: 40px;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+    border-radius: 16px;
+    box-shadow: var(--shadow), 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s var(--elastic-curve);
     position: relative;
     overflow: hidden;
+    transform: translateY(0);
+    opacity: 0;
+    animation: formAppear 0.8s var(--elastic-curve) forwards 0.3s;
+    z-index: 1;
+}
+
+@keyframes formAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .contact-form:hover {
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-lg), 0 20px 40px rgba(37, 99, 235, 0.1);
+    transform: translateY(-10px);
 }
 
 .contact-form::before {
@@ -234,6 +270,35 @@ body {
     width: 4px;
     height: 100%;
     background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    animation: borderPulse 2s infinite alternate var(--elastic-curve);
+}
+
+@keyframes borderPulse {
+    from { opacity: 0.6; height: 30%; }
+    to { opacity: 1; height: 100%; }
+}
+
+.contact-form::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--primary-color), transparent);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s var(--elastic-curve);
+}
+
+.contact-form:hover::after {
+    opacity: 1;
 }
 
 .form-row {
@@ -244,31 +309,84 @@ body {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     position: relative;
+    transform: translateY(0);
+    opacity: 0;
+    animation: staggeredFadeIn 0.6s var(--elastic-curve) forwards;
+    animation-delay: calc(var(--i, 0) * 0.1s + 0.5s);
+}
+
+@keyframes staggeredFadeIn {
+    0% { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-weight: 500;
     color: var(--dark-color);
+    transform: translateY(0);
+    transition: all 0.3s var(--elastic-curve);
+    font-size: 0.95rem;
+}
+
+.form-group:focus-within label {
+    color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
 .form-group label span {
     color: var(--primary-color);
+    position: relative;
+}
+
+.form-group label span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s var(--elastic-curve);
+}
+
+.form-group:focus-within label span::after {
+    transform: scaleX(1);
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 12px 16px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+    padding: 14px 18px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
     font-size: 16px;
-    transition: var(--transition);
-    background-color: var(--light-bg);
+    transition: all 0.3s ease;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    position: relative;
+    z-index: 2; /* Increased z-index to ensure clickability */
+    pointer-events: auto; /* Ensure pointer events work */
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    background-color: white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    border-color: var(--gray-color);
 }
 
 .form-group input:focus,
@@ -276,12 +394,16 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background-color: white;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
+    transform: translateY(-3px);
 }
 
 .form-group textarea {
     resize: vertical;
-    min-height: 150px;
+    min-height: 160px;
+    line-height: 1.6;
+    transition: height 0.3s ease;
 }
 
 .input-highlight {
@@ -316,52 +438,70 @@ body {
 .submit-button {
     width: 100%;
     padding: 16px;
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.5s var(--elastic-curve);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: buttonAppear 0.8s var(--elastic-curve) forwards 1.2s;
+    z-index: 1;
+}
+
+@keyframes buttonAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s;
 }
 
 .submit-button:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+}
+
+.submit-button:hover::before {
+    left: 100%;
+}
+
+.submit-button:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
 }
 
 .submit-button i {
-    transition: var(--transition);
+    transition: all 0.3s var(--bounce-curve);
 }
 
 .submit-button:hover i {
     transform: translateX(5px);
-}
-
-.button-hover-effect {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: inherit;
-    transform: scale(0);
-    opacity: 0;
-    transition: transform 0.6s ease, opacity 0.6s ease;
-}
-
-.submit-button:hover .button-hover-effect {
-    transform: scale(1);
-    opacity: 1;
 }
 
 /* Contact Info */

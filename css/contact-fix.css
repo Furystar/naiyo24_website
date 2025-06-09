@@ -1,0 +1,95 @@
+/* Fix for contact form accessibility and responsiveness */
+
+/* Ensure form is clickable and correctly positioned */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  position: relative;
+  z-index: 5;
+}
+
+.contact-form {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 10;
+  overflow: visible; /* Changed from overflow: hidden to ensure dropdowns are visible */
+  opacity: 1;
+  transform: none;
+  pointer-events: auto !important; /* Ensure it can be interacted with */
+  animation: none; /* Disable animations that might affect clickability */
+}
+
+/* Fix form field clickability */
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+  transform: none !important;
+  opacity: 1 !important;
+  animation: none !important; /* Disable animations that might interfere */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  position: relative;
+  z-index: 2;
+  pointer-events: auto !important; /* Force clickability */
+}
+
+/* Fix responsive layout */
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .contact-form,
+  .contact-info {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .contact-form {
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .submit-button {
+    width: 100%;
+    transform: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+    z-index: 20;
+  }
+}
+
+/* Fix select boxes and dropdowns */
+.form-group select {
+  appearance: auto; /* Restore default appearance for dropdowns */
+  -webkit-appearance: auto;
+  background-image: none; /* Remove custom arrow backgrounds if any */
+}

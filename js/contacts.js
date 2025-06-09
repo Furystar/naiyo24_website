@@ -1,11 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     if (!contactForm) return;
+    
+    console.log('Contact form script initialized');
 
     // Create notification element
     const notification = document.createElement('div');
     notification.className = 'form-notification';
     document.body.appendChild(notification);
+
+    // Fix form field z-index and clickability issues
+    fixFormFields();
 
     // API configuration
     const API_URL = 'http://localhost:5000/api/contact'; // Update with your actual API endpoint
@@ -31,18 +36,23 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show loading state
         const submitButton = contactForm.querySelector('.submit-button');
         submitButton.disabled = true;
-        submitButton.innerHTML = '<span class="button-text">Sending...</span><i class="fas fa-spinner fa-spin"></i>';
-
-        try {
+        submitButton.innerHTML = '<span class="button-text">Sending...</span><i class="fas fa-spinner fa-spin"></i>';        try {
+            // Set timeout to prevent infinite waiting
+            const timeoutPromise = new Promise((_, reject) => 
+                setTimeout(() => reject(new Error('Request timeout')), 10000)
+            );
+            
             // Send data to backend
-            const response = await fetch(API_URL, {
+            const fetchPromise = fetch(API_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData)
             });
-
+            
+            // Race between fetch and timeout
+            const response = await Promise.race([fetchPromise, timeoutPromise]);
             const data = await response.json();
 
             if (!response.ok) {
@@ -57,7 +67,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
         } catch (error) {
             console.error('Submission error:', error);
-            showErrorNotification(error.message || 'Something went wrong. Please try again.');
+            
+            // If server error, use fallback method
+            if (error.message === 'Failed to fetch' || error.message === 'Request timeout') {
+                showFallbackSubmission(formData);
+            } else {
+                showErrorNotification(error.message || 'Something went wrong. Please try again.');
+            }
         } finally {
             submitButton.disabled = false;
             submitButton.innerHTML = '<span class="button-text">Send Message</span><i class="fas fa-paper-plane"></i>';
@@ -95,6 +111,39 @@ document.addEventListener('DOMContentLoaded', function() {
     function sanitizeInput(input) {
         // Basic sanitization - prevent XSS
         return input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+    
+    // Function to fix form fields clickability
+    function fixFormFields() {
+        // Ensure all form inputs are clickable
+        const formInputs = contactForm.querySelectorAll('input, select, textarea');
+        formInputs.forEach(input => {
+            input.style.position = 'relative';
+            input.style.zIndex = '10';
+            input.style.pointerEvents = 'auto';
+            
+            // Add click event listener to debug any issues
+            input.addEventListener('click', function(e) {
+                console.log('Input clicked:', input.id);
+            });
+        });
+        
+        // Fix select dropdown
+        const selectElements = contactForm.querySelectorAll('select');
+        selectElements.forEach(select => {
+            select.style.appearance = 'auto';
+            select.style.webkitAppearance = 'auto';
+            select.style.mozAppearance = 'auto';
+            select.style.backgroundImage = 'none';
+        });
+        
+        // Fix submit button
+        const submitButton = contactForm.querySelector('.submit-button');
+        if (submitButton) {
+            submitButton.style.position = 'relative';
+            submitButton.style.zIndex = '100';
+            submitButton.style.pointerEvents = 'auto';
+        }
     }
 
     // Notification animations
